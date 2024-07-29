@@ -87,11 +87,12 @@ void CVehiclePool::Process()
 						}
 					}
 					
-					if (pVehicle->GetDoorState())
-						pVehicle->SetDoorState(1);
-					
-					else
-						pVehicle->SetDoorState(0);
+					/*if (pVehicle->GetDoorState())
+					{*/
+						pVehicle->SetDoorState(pVehicle->GetDoorState());
+					//}
+					/*else
+						pVehicle->SetDoorState(1);*/
 					
 					if(pVehicle->IsDriverLocalPlayer()) 
 					{
@@ -308,7 +309,6 @@ void CVehiclePool::AssignSpecialParamsToVehicle(VEHICLEID VehicleID, uint8_t byt
 			pVehicle->m_byteObjectiveVehicle = 1;
 			pVehicle->m_bSpecialMarkerEnabled = false;
 		}
-
 		pVehicle->SetDoorState(byteDoorsLocked);
 	}
 }

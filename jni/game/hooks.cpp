@@ -594,14 +594,15 @@ __attribute__((naked)) void PickupPickUp_hook()
 extern "C" bool NotifyEnterVehicle(VEHICLE_TYPE *_pVehicle)
 {
     Log("NotifyEnterVehicle");
- 
+	
     if(!pNetGame)
     	return false;
  
     CVehiclePool *pVehiclePool = pNetGame->GetVehiclePool();
     CVehicle *pVehicle;
     VEHICLEID VehicleID = pVehiclePool->FindIDFromGtaPtr(_pVehicle);
- 
+
+
     if(VehicleID == INVALID_VEHICLE_ID)
     	return false;
 
@@ -617,9 +618,9 @@ extern "C" bool NotifyEnterVehicle(VEHICLE_TYPE *_pVehicle)
  
     CLocalPlayer *pLocalPlayer = pNetGame->GetPlayerPool()->GetLocalPlayer();
  
-    //if(pLocalPlayer->GetPlayerPed() && pLocalPlayer->GetPlayerPed()->GetCurrentWeapon() == WEAPON_PARACHUTE)
-    //  pLocalPlayer->GetPlayerPed()->SetArmedWeapon(0);
- 
+    /*if(pLocalPlayer->GetPlayerPed() && pLocalPlayer->GetPlayerPed()->GetCurrentWeapon() == WEAPON_PARACHUTE)
+       pLocalPlayer->GetPlayerPed()->SetArmedWeapon(0);*/
+	//if (GetDoorState)
     pLocalPlayer->SendEnterVehicleNotification(VehicleID, false);
  
     return true;
