@@ -1,23 +1,20 @@
-C:/Users/napas/Desktop/launcher2000/Libs/obj/local/armeabi-v7a/objs/samp/vendor/RakNet/RakNetStatistics.o: \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/RakNetStatistics.cpp \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/RakNetStatistics.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/PacketPriority.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/Export.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/NetworkTypes.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/RakNetDefines.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/BitStream.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/GetTime.h
+./obj/local/armeabi-v7a/objs/samp/vendor/RakNet/RakNetStatistics.o: \
+  jni/vendor/RakNet/RakNetStatistics.cpp \
+  jni/vendor/RakNet/RakNetStatistics.h \
+  jni/vendor/RakNet/PacketPriority.h jni/vendor/RakNet/Export.h \
+  jni/vendor/RakNet/NetworkTypes.h jni/vendor/RakNet/RakNetDefines.h \
+  jni/vendor/RakNet/BitStream.h jni/vendor/RakNet/GetTime.h
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/RakNetStatistics.h:
+jni/vendor/RakNet/RakNetStatistics.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/PacketPriority.h:
+jni/vendor/RakNet/PacketPriority.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/Export.h:
+jni/vendor/RakNet/Export.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/NetworkTypes.h:
+jni/vendor/RakNet/NetworkTypes.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/RakNetDefines.h:
+jni/vendor/RakNet/RakNetDefines.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/BitStream.h:
+jni/vendor/RakNet/BitStream.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/GetTime.h:
+jni/vendor/RakNet/GetTime.h:

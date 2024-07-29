@@ -21,6 +21,7 @@ FILE_LIST := $(wildcard $(LOCAL_PATH)/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/game/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/net/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/util/*.cpp)
+
 FILE_LIST += $(wildcard $(LOCAL_PATH)/game/RW/RenderWare.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/gui/*.cpp)
 FILE_LIST += $(wildcard $(LOCAL_PATH)/cryptors/*.cpp)

@@ -1,23 +1,20 @@
-C:/Users/napas/Desktop/launcher2000/Libs/obj/local/armeabi-v7a/objs/samp/vendor/RakNet/InternalPacketPool.o: \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/InternalPacketPool.cpp \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/InternalPacketPool.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/DS_Queue.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/Export.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/InternalPacket.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/PacketPriority.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/NetworkTypes.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/RakNetDefines.h
+./obj/local/armeabi-v7a/objs/samp/vendor/RakNet/InternalPacketPool.o: \
+  jni/vendor/RakNet/InternalPacketPool.cpp \
+  jni/vendor/RakNet/InternalPacketPool.h jni/vendor/RakNet/DS_Queue.h \
+  jni/vendor/RakNet/Export.h jni/vendor/RakNet/InternalPacket.h \
+  jni/vendor/RakNet/PacketPriority.h jni/vendor/RakNet/NetworkTypes.h \
+  jni/vendor/RakNet/RakNetDefines.h
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/InternalPacketPool.h:
+jni/vendor/RakNet/InternalPacketPool.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/DS_Queue.h:
+jni/vendor/RakNet/DS_Queue.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/Export.h:
+jni/vendor/RakNet/Export.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/InternalPacket.h:
+jni/vendor/RakNet/InternalPacket.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/PacketPriority.h:
+jni/vendor/RakNet/PacketPriority.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/NetworkTypes.h:
+jni/vendor/RakNet/NetworkTypes.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/RakNetDefines.h:
+jni/vendor/RakNet/RakNetDefines.h:

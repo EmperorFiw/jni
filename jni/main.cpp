@@ -575,7 +575,7 @@ void CrashLog(const char* fmt, ...)
 
 	if (flLog == nullptr && g_pszStorage != nullptr)
 	{
-		sprintf(buffer, OBFUSCATE("%scrash_log.log"), g_pszStorage);
+		sprintf(buffer, OBFUSCATE("%scrash.log"), g_pszStorage);
 		flLog = fopen(buffer, OBFUSCATE("a"));
 	}
 

@@ -1,12 +1,9 @@
-C:/Users/napas/Desktop/launcher2000/Libs/obj/local/armeabi-v7a/objs/samp/voice/SlideController.o: \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/SlideController.cpp \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/SlideController.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/include/util/Timer.h \
+./obj/local/armeabi-v7a/objs/samp/voice/SlideController.o: \
+  jni/voice/SlideController.cpp jni/voice/SlideController.h \
+  jni/voice/include/util/Timer.h \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\atomic \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdint \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/Parameter.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/Channel.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni\main.h \
+  jni/voice/Parameter.h jni/voice/Channel.h jni\main.h \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib \
@@ -23,54 +20,38 @@ C:/Users/napas/Desktop/launcher2000/Libs/obj/local/armeabi-v7a/objs/samp/voice/S
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/common.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/RenderWare.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/skeleton.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rwcore.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rwplcore.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/errcore.def \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/errcom.def \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpcriter.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rperror.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rphanim.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpworld.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rtquat.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rtanim.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpmatfx.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpskin.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpuvanim.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rtdict.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/obfuscate/str_obfuscate.hpp \
+  jni/game/RW/common.h jni/game/RW/RenderWare.h jni/game/RW/skeleton.h \
+  jni/game/RW/rwcore.h jni/game/RW/rwplcore.h jni/game/RW/errcore.def \
+  jni/game/RW/errcom.def jni/game/RW/rpcriter.h jni/game/RW/rperror.h \
+  jni/game/RW/rphanim.h jni/game/RW/rpworld.h jni/game/RW/rtquat.h \
+  jni/game/RW/rtanim.h jni/game/RW/rpmatfx.h jni/game/RW/rpskin.h \
+  jni/game/RW/rpuvanim.h jni/game/RW/rtdict.h \
+  jni/vendor/obfuscate/str_obfuscate.hpp \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/raknet/SAMP/samp_netencr.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/raknet/SAMP/SAMPRPC.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/util/util.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/bass/bass.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/bass/bass_fx.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/opus/opus.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/opus/opus_types.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/opus/opus_defines.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_bits.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_types.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_config_types.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_echo.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_preprocess.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/Header.h
+  jni/vendor/raknet/SAMP/samp_netencr.h jni/vendor/raknet/SAMP/SAMPRPC.h \
+  jni/util/util.h jni/vendor\audio/bass/bass.h \
+  jni/vendor\audio/bass/bass_fx.h jni/vendor\audio/opus/opus.h \
+  jni/vendor\audio/opus/opus_types.h \
+  jni/vendor\audio/opus/opus_defines.h jni/vendor\audio/speex/speex.h \
+  jni/vendor\audio/speex/speex_bits.h \
+  jni/vendor\audio/speex/speex_types.h \
+  jni/vendor\audio/speex/speex_config_types.h \
+  jni/vendor\audio/speex/speex_echo.h \
+  jni/vendor\audio/speex/speex_preprocess.h jni/voice/Header.h
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/SlideController.h:
+jni/voice/SlideController.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/include/util/Timer.h:
+jni/voice/include/util/Timer.h:
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\atomic:
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdint:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/Parameter.h:
+jni/voice/Parameter.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/Channel.h:
+jni/voice/Channel.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni\main.h:
+jni\main.h:
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo:
 
@@ -104,70 +85,70 @@ C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordere
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/common.h:
+jni/game/RW/common.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/RenderWare.h:
+jni/game/RW/RenderWare.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/skeleton.h:
+jni/game/RW/skeleton.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rwcore.h:
+jni/game/RW/rwcore.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rwplcore.h:
+jni/game/RW/rwplcore.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/errcore.def:
+jni/game/RW/errcore.def:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/errcom.def:
+jni/game/RW/errcom.def:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpcriter.h:
+jni/game/RW/rpcriter.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rperror.h:
+jni/game/RW/rperror.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rphanim.h:
+jni/game/RW/rphanim.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpworld.h:
+jni/game/RW/rpworld.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rtquat.h:
+jni/game/RW/rtquat.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rtanim.h:
+jni/game/RW/rtanim.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpmatfx.h:
+jni/game/RW/rpmatfx.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpskin.h:
+jni/game/RW/rpskin.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rpuvanim.h:
+jni/game/RW/rpuvanim.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/game/RW/rtdict.h:
+jni/game/RW/rtdict.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/obfuscate/str_obfuscate.hpp:
+jni/vendor/obfuscate/str_obfuscate.hpp:
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/raknet/SAMP/samp_netencr.h:
+jni/vendor/raknet/SAMP/samp_netencr.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/raknet/SAMP/SAMPRPC.h:
+jni/vendor/raknet/SAMP/SAMPRPC.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/util/util.h:
+jni/util/util.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/bass/bass.h:
+jni/vendor\audio/bass/bass.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/bass/bass_fx.h:
+jni/vendor\audio/bass/bass_fx.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/opus/opus.h:
+jni/vendor\audio/opus/opus.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/opus/opus_types.h:
+jni/vendor\audio/opus/opus_types.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/opus/opus_defines.h:
+jni/vendor\audio/opus/opus_defines.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex.h:
+jni/vendor\audio/speex/speex.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_bits.h:
+jni/vendor\audio/speex/speex_bits.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_types.h:
+jni/vendor\audio/speex/speex_types.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_config_types.h:
+jni/vendor\audio/speex/speex_config_types.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_echo.h:
+jni/vendor\audio/speex/speex_echo.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor\audio/speex/speex_preprocess.h:
+jni/vendor\audio/speex/speex_preprocess.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/voice/Header.h:
+jni/voice/Header.h:

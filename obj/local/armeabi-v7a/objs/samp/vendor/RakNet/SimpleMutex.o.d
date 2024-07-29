@@ -1,8 +1,7 @@
-C:/Users/napas/Desktop/launcher2000/Libs/obj/local/armeabi-v7a/objs/samp/vendor/RakNet/SimpleMutex.o: \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/SimpleMutex.cpp \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/SimpleMutex.h \
-  C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/Export.h
+./obj/local/armeabi-v7a/objs/samp/vendor/RakNet/SimpleMutex.o: \
+  jni/vendor/RakNet/SimpleMutex.cpp jni/vendor/RakNet/SimpleMutex.h \
+  jni/vendor/RakNet/Export.h
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/SimpleMutex.h:
+jni/vendor/RakNet/SimpleMutex.h:
 
-C:/Users/napas/Desktop/launcher2000/Libs/jni/vendor/RakNet/Export.h:
+jni/vendor/RakNet/Export.h:

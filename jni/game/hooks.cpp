@@ -593,7 +593,7 @@ __attribute__((naked)) void PickupPickUp_hook()
 
 extern "C" bool NotifyEnterVehicle(VEHICLE_TYPE *_pVehicle)
 {
-    //Log("NotifyEnterVehicle");
+    Log("NotifyEnterVehicle");
  
     if(!pNetGame)
     	return false;

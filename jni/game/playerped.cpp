@@ -676,6 +676,7 @@ void CPlayerPed::GiveWeapon(int iWeaponID, int iAmmo)
 
 	((int(*)(uintptr_t, unsigned int, int))(SA_ADDR(0x43429C + 1)))((uintptr_t)m_pPed, iWeaponID, iAmmo); // CPed::GiveWeapon(thisptr, weapoid, ammo)
 	((int(*)(uintptr_t, unsigned int))(SA_ADDR(0x434528 + 1)))((uintptr_t)m_pPed, iWeaponID);	// CPed::SetCurrentWeapon(thisptr, weapid)
+	
 }
 
 void CPlayerPed::SetArmedWeapon(int iWeaponID)
