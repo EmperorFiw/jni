@@ -307,7 +307,7 @@ void CObject::SetMaterial(int iModel, uint8_t byteMaterialIndex, char *txdname, 
 			return;
 		}
 		m_dwMaterialColor[byteMaterialIndex] = dwColor;
-		Log("color of material: 0x%X", m_dwMaterialColor[byteMaterialIndex]);
+		//Log("color of material: 0x%X", m_dwMaterialColor[byteMaterialIndex]);
 		m_bHasMaterial = true;
 	}
 }
