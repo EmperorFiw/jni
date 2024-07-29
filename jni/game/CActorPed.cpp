@@ -142,7 +142,7 @@ void CActorPed::ApplyAnimation(char* szAnimName, char* szAnimFile, float fDelta,
 	if (!m_pPed) return;
 	if (!GamePool_Ped_GetAt(m_dwGTAId)) return;
 
-	if (!strcasecmp(szAnimFile, OBFUSCATE("SEX"))) return;
+	//if (!strcasecmp(szAnimFile, OBFUSCATE("SEX"))) return;
 
 	if (!pGame->IsAnimationLoaded(szAnimFile))
 	{
@@ -168,7 +168,7 @@ void CActorPed::PutDirectlyInVehicle(int iVehicleID, int iSeat)
 
 	if (pVehicle->fHealth == 0.0f) return;
 	if (pVehicle->entity.vtable == SA_ADDR(0x5C7358)) return;
-	// check seatid (допилить)
+	// check seatid (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 
 	if (iSeat == 0)
 	{
