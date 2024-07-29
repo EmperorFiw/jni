@@ -143,7 +143,6 @@ void CActorPed::ApplyAnimation(char* szAnimName, char* szAnimFile, float fDelta,
 	if (!GamePool_Ped_GetAt(m_dwGTAId)) return;
 
 	//if (!strcasecmp(szAnimFile, OBFUSCATE("SEX"))) return;
-IsValidGamePed
 	if (!pGame->IsAnimationLoaded(szAnimFile))
 	{
 		pGame->RequestAnimation(szAnimFile);
