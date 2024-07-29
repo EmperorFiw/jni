@@ -202,11 +202,11 @@ uint32_t CPad__DuckJustDown_hook(uintptr_t thiz, int unk)
 uint32_t (*CPad__MeleeAttackJustDown)(uintptr_t thiz);
 uint32_t CPad__MeleeAttackJustDown_hook(uintptr_t thiz)
 {
-	/*
-		0 - �� ����
-		1 - ������� ���� (���)
-		2 - ������� ���� (��� + F)
-	*/
+    /*
+        0 - Not Pressed
+        1 - Melee Attack (Short)
+        2 - Melee Attack (Short + F)
+    */
 
 	if(dwCurPlayerActor && (byteCurPlayer != 0))
 	{
@@ -225,11 +225,11 @@ uint32_t CPad__MeleeAttackJustDown_hook(uintptr_t thiz)
 		//{
 		//	LocalPlayerKeys.bKeys[ePadKeys::KEY_SECONDARY_ATTACK] = true;
 		//}
-		//else if(dwResult == 1)
-		//{
-		LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE] = dwResult;
-		//	LocalPlayerKeys.bKeys[ePadKeys::KEY_HANDBRAKE] = false;
-		//}
+		if(dwResult == 1)
+		{
+			LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE] = dwResult;
+			//LocalPlayerKeys.bKeys[ePadKeys::KEY_HANDBRAKE] = false; //aim
+		}
 
 		return dwResult;
 	}
