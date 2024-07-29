@@ -538,7 +538,7 @@ void DialogWindow(RPCParameters *rpcParams)
 		cp1251_to_utf8(info, szBuff);
 		pDialogWindow->SetInfo(szBuff, strlen(szBuff));
 
-		//fix dialog bug
+		//dialog fix
 		if(wDialogID < 0|| wDialogID >= 65535) return;
 		
 		if(pSettings->GetReadOnly().iDialog)
