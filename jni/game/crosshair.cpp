@@ -51,7 +51,7 @@ void CCrossHair::Render()
 		//float fFixChair1 = (RsGlobal->maximumWidth - (RsGlobal->maximumHeight / 9 * 16)) / 2;
 		//float fFixChair2 = ((RsGlobal->maximumHeight / 9 * 16) * 0.524);
 		float fCHairScreenMultX = (RsGlobal->maximumWidth - (RsGlobal->maximumHeight / 9 * 16)) / 2 + ((RsGlobal->maximumHeight / 9 * 16) * 0.524);
-		Log("fCHairScreenMultX: %f", fCHairScreenMultX);
+		//Log("fCHairScreenMultX: %f", fCHairScreenMultX);
 		if (fCHairScreenMultX <= 1080 || fCHairScreenMultX >= 1920) // fix linked limits
 		{
 			m_UsedCrossHair = false;
@@ -65,7 +65,7 @@ void CCrossHair::Render()
 			fFixedOffset = 0;
 
 		float fCHairScreenMultY = (RsGlobal->maximumHeight / 9 * 16) / 10 * 6 * 0.4 + fFixedOffset;
-		Log("fCHairScreenMultY: %f", fCHairScreenMultY);
+		//Log("fCHairScreenMultY: %f", fCHairScreenMultY);
 		
 		// GetWeaponRadiusOnScreen
 		float fRadiusWeap = ((float (*)(PED_TYPE*))(SA_ADDR(0x454F60 + 1)))(GamePool_FindPlayerPed());
