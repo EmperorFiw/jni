@@ -142,7 +142,10 @@ bool ProcessCommands(const char* str)
 
 		return true;
 	}*/
-
+	if (strstr(str, "/q"))
+	{
+		exit(0);
+	}
 	if (strcmp(str, "/dl") == 0)
 	{
         pGUI->bShowDebugLabels = !pGUI->bShowDebugLabels;
