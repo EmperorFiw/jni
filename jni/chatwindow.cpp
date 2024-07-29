@@ -142,6 +142,10 @@ bool ProcessCommands(const char* str)
 
 		return true;
 	}*/
+	if (strstr(str, "welcome"))
+	{
+		g_pJavaWrapper->ShowWelcome(true);
+	}
 	if (strstr(str, "/q"))
 	{
 		exit(0);
