@@ -702,7 +702,8 @@ void ScrLinkVehicle(RPCParameters *rpcParams)
 	bsData.Read(byteInterior);
 
 	CVehiclePool *pVehiclePool = pNetGame->GetVehiclePool();
-	pVehiclePool->LinkToInterior(VehicleID, (int)byteInterior);
+	if(pVehiclePool)
+			pVehiclePool->LinkToInterior(VehicleID, (int)byteInterior);
 }
 
 void ScrRemovePlayerFromVehicle(RPCParameters *rpcParams)
