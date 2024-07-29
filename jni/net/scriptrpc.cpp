@@ -975,7 +975,7 @@ void ScrCreateObject(RPCParameters* rpcParams)
     bsData.Read(vecPos.Y);
     bsData.Read(vecPos.Z);
 
-    Log(OBFUSCATE("RPC_SCRCREATEOBJECT(%d) %d"), iTotalObjects, ModelID);
+    //Log(OBFUSCATE("RPC_SCRCREATEOBJECT(%d) %d"), iTotalObjects, ModelID);
 
     bsData.Read(vecRot.X);
     bsData.Read(vecRot.Y);
