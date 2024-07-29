@@ -202,52 +202,37 @@ uint32_t CPad__DuckJustDown_hook(uintptr_t thiz, int unk)
 uint32_t (*CPad__MeleeAttackJustDown)(uintptr_t thiz);
 uint32_t CPad__MeleeAttackJustDown_hook(uintptr_t thiz)
 {
-    /*
-        0 - ไม่ได้กด
-        1 - โจมตีประชิด (สั้น)
-        2 - โจมตีประชิด (สั้น + F)
-    */
+	/*
+		0 - ไม่กก
+		1 - โจมตี กด
+		2 - กด+F
+	*/
 
-    // ตรวจสอบว่า actor ของผู้เล่นปัจจุบันและ byteCurPlayer ถูกต้องหรือไม่
-    if(dwCurPlayerActor && (byteCurPlayer != 0))
-    {
-		Log("Click somthing");
-        // ตรวจสอบว่าปุ่ม handbrake และ secondary attack ถูกกดหรือไม่
-        if (RemotePlayerKeys[byteCurPlayer].bKeys[ePadKeys::KEY_HANDBRAKE] &&
-            RemotePlayerKeys[byteCurPlayer].bKeys[ePadKeys::KEY_SECONDARY_ATTACK])
-        {
-            return 2; // คืนค่าบอกว่าโจมตีประชิด (สั้น + F)
-        }
+	if(dwCurPlayerActor && (byteCurPlayer != 0))
+	{
+		if( RemotePlayerKeys[byteCurPlayer].bKeys[ePadKeys::KEY_HANDBRAKE] &&
+			RemotePlayerKeys[byteCurPlayer].bKeys[ePadKeys::KEY_SECONDARY_ATTACK])
+			return 2;
 
-        // คืนค่าผลลัพธ์ของปุ่ม fire ปัจจุบัน
-        if (RemotePlayerKeys[byteCurPlayer].bKeys[ePadKeys::KEY_FIRE])
-        {
-            return 1; // คืนค่าบอกว่าโจมตีประชิด (สั้น)
-        }
+		return RemotePlayerKeys[byteCurPlayer].bKeys[ePadKeys::KEY_FIRE];
+	}
+	else
+	{
+		uint32_t dwResult = CPad__MeleeAttackJustDown(thiz);
+		//LocalPlayerKeys.bKeys[ePadKeys::KEY_HANDBRAKE] = true;
 
-        return 0; // คืนค่าบอกว่าไม่ได้กด
-    }
-    else
-    {
-        // เรียกฟังก์ชันเดิม
-        uint32_t dwResult = CPad__MeleeAttackJustDown(thiz);
+		//if(dwResult == 2) 
+		//{
+		//	LocalPlayerKeys.bKeys[ePadKeys::KEY_SECONDARY_ATTACK] = true;
+		//}
+		//else if(dwResult == 1)
+		//{
+		LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE] = dwResult;
+		//	LocalPlayerKeys.bKeys[ePadKeys::KEY_HANDBRAKE] = false;
+		//}
 
-        // ตรวจสอบถ้าผลลัพธ์คือการโจมตีประชิด (สั้น)
-
-        if(dwResult == 1)
-        {
-            // อัพเดตปุ่ม fire ของ LocalPlayerKeys
-            LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE] = true;
-
-        }
-		else
-		{
-			LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE] = false;
-		}
-
-        // คืนค่าผลลัพธ์จากฟังก์ชันเดิม
-        return dwResult;
-    }
+		return dwResult;
+	}
 }
 
 uint32_t (*CPad__GetBlock)(uintptr_t thiz);
@@ -931,6 +916,7 @@ void HookCPad()
 	installHook(SA_ADDR(0x39EA4C), (uintptr_t) CPad__SwimJumpJustDown_hook, (uintptr_t *) &CPad__SwimJumpJustDown);
 
 	installHook(SA_ADDR(0x39DD9C), (uintptr_t) CPad__MeleeAttackJustDown_hook, (uintptr_t *) &CPad__MeleeAttackJustDown);
+
 	installHook(SA_ADDR(0x39E038), (uintptr_t) CPad__GetWeapon_hook, (uintptr_t *) &CPad__GetWeapon);
 	installHook(SA_ADDR(0x39E498), (uintptr_t) CPad__GetEnterTargeting_hook, (uintptr_t *) &CPad__GetEnterTargeting);
 	installHook(SA_ADDR(0x39E418), (uintptr_t) GetTarget_hook, (uintptr_t *) &GetTarget);

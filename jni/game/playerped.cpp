@@ -676,7 +676,6 @@ void CPlayerPed::GiveWeapon(int iWeaponID, int iAmmo)
 
 	((int(*)(uintptr_t, unsigned int, int))(SA_ADDR(0x43429C + 1)))((uintptr_t)m_pPed, iWeaponID, iAmmo); // CPed::GiveWeapon(thisptr, weapoid, ammo)
 	((int(*)(uintptr_t, unsigned int))(SA_ADDR(0x434528 + 1)))((uintptr_t)m_pPed, iWeaponID);	// CPed::SetCurrentWeapon(thisptr, weapid)
-	
 }
 
 void CPlayerPed::SetArmedWeapon(int iWeaponID)
@@ -690,7 +689,7 @@ void CPlayerPed::SetArmedWeapon(int iWeaponID)
 	{
 		return;
 	}
-
+	Log("Weapon id = %d", iWeaponID);
 	((int(*)(uintptr_t, unsigned int))(SA_ADDR(0x434528 + 1)))((uintptr_t)m_pPed, iWeaponID);	// CPed::SetCurrentWeapon(thisptr, weapid)
 }
 
@@ -2246,9 +2245,14 @@ int CPlayerPed::GetStuff()
 
 bool CPlayerPed::ApplyStuff()
 {
-	if (IsValidGamePed(m_pPed) && IsAdded() || IsInVehicle())
+	if (IsInVehicle())
 	{
 		SetArmedWeapon(0);
+	}
+	if (IsValidGamePed(m_pPed) && IsAdded())
+	{
+		/*Log("Apply stuff Set Weapon 0");
+		SetArmedWeapon(0);*/
 
 		int iStuffType = GetStuff();
 		switch (iStuffType)
@@ -2282,6 +2286,7 @@ void CPlayerPed::GiveStuff(int iType)
 	if (!IsValidGamePed(m_pPed) || !GamePool_Ped_GetAt(m_dwGTAId) || IsInVehicle())
 		return;
 
+	Log("Gife stuff set weapon 0");
 	SetArmedWeapon(WEAPON_FIST);
 
 	if (m_stuffData.dwObject)
