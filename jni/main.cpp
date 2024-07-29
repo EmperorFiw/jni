@@ -135,7 +135,7 @@ void InitSAMP(JNIEnv* pEnv, jobject thiz)
 	
 	//BASS_Init(-1, 44100, BASS_DEVICE_3D, 0, nullptr); // ������������� ��������� ������
 
-	g_pszStorage = "/storage/emulated/0/Android/Rosstown/";
+	g_pszStorage = "/storage/emulated/0/Android/EMPEROR/";
 
 	if(!g_pszStorage)
 	{
@@ -524,7 +524,7 @@ void Log(const char *fmt, ...)
 
 	if(flLog == nullptr && g_pszStorage != nullptr)
 	{
-		sprintf(buffer, OBFUSCATE("%slogcat/samp_log.txt"), g_pszStorage);
+		sprintf(buffer, OBFUSCATE("%ssamp_log.txt"), g_pszStorage);
 		flLog = fopen(buffer, OBFUSCATE("w"));
 	}
 	memset(buffer, 0, sizeof(buffer));
@@ -575,7 +575,7 @@ void CrashLog(const char* fmt, ...)
 
 	if (flLog == nullptr && g_pszStorage != nullptr)
 	{
-		sprintf(buffer, OBFUSCATE("%slogcat/crash_log.log"), g_pszStorage);
+		sprintf(buffer, OBFUSCATE("%scrash_log.log"), g_pszStorage);
 		flLog = fopen(buffer, OBFUSCATE("a"));
 	}
 
