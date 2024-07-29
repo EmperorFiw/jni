@@ -75,7 +75,7 @@ void CPickupPool::PickedUp(int iPickup)
 {
 	int index = GetNumberFromID(iPickup);
 
-	Log(OBFUSCATE("CPickupPool::PickedUp index = %d"), index);
+	//Log(OBFUSCATE("CPickupPool::PickedUp index = %d"), index);
 
 	if(index < 0 || index >= MAX_PICKUPS) return;
 	if(m_dwHnd[index] != 0 && m_iTimer[index] == 0)
