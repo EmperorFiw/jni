@@ -1288,11 +1288,12 @@ void CLocalPlayer::SpectateVehicle(VEHICLEID VehicleID)
 	}
 }
 
-void CLocalPlayer::GiveTakeDamage(bool bGiveOrTake, uint16_t wPlayerID, float damage_amount, uint32_t weapon_id, uint32_t bodypart)
+void CLocalPlayer::GiveTakeDamage(bool give, uint16_t wPlayerID, float damage_amount, uint32_t weapon_id, uint32_t bodypart)
 {
+	//give = 1
 	RakNet::BitStream bitStream;
 
-	bitStream.Write((bool)bGiveOrTake);
+	bitStream.Write((bool)give);
 	bitStream.Write((uint16_t)wPlayerID);
 	bitStream.Write((float)damage_amount);
 	bitStream.Write((uint32_t)weapon_id);
