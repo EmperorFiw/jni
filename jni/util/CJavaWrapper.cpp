@@ -858,27 +858,6 @@ void CJavaWrapper::ShowTabWindow()
 	env->CallVoidMethod(this->activity, this->s_showTabWindow);
 }
 
-void CJavaWrapper::SetTabStat(int id, char* name, int score, int ping) {
-
-	JNIEnv* env = GetEnv();
-
-	if (!env)
-	{
-		Log("No env");
-		return;
-	}
-
-	jclass strClass = env->FindClass("java/lang/String");
-    jmethodID ctorID = env->GetMethodID(strClass, "<init>", "([BLjava/lang/String;)V");
-    jstring encoding = env->NewStringUTF("UTF-8");
-
-    jbyteArray bytes = env->NewByteArray(strlen(name));
-    env->SetByteArrayRegion(bytes, 0, strlen(name), (jbyte*)name);
-    jstring jname = (jstring) env->NewObject(strClass, ctorID, bytes, encoding);
-
-	env->CallVoidMethod(this->activity, this->s_setTabStat, id, jname, score, ping);
-}
-
 void CJavaWrapper::ShowSpeed()
 {
     JNIEnv* env = GetEnv();
@@ -916,19 +895,6 @@ void CJavaWrapper::UpdateSpeedInfo(int speed, int fuel, int hp, int mileage, int
 	env->CallVoidMethod(this->activity, this->s_updateSpeedInfo, speed, fuel, hp, mileage, engine, light, belt, lock);
 }
 
-void CJavaWrapper::ShowWelcome(bool a) {
-
-    JNIEnv* env = GetEnv();
-
-	if (!env)
-	{
-		Log("No env");
-		return;
-	}
-    env->CallVoidMethod(this->activity, this->s_showWelcome, a);
-}
-
-
 void CJavaWrapper::ShowMenu() 
 {
 	JNIEnv* env = GetEnv();
@@ -941,6 +907,77 @@ void CJavaWrapper::ShowMenu()
 
 	env->CallVoidMethod(this->activity, this->s_showMenu);
 }
+
+void CJavaWrapper::SetTabStat(int id, char* name, int score, int ping) {
+
+	JNIEnv* env = GetEnv();
+
+	if (!env)
+	{
+		Log("No env");
+		return;
+	}
+
+	jclass strClass = env->FindClass("java/lang/String");
+    jmethodID ctorID = env->GetMethodID(strClass, "<init>", "([BLjava/lang/String;)V");
+    jstring encoding = env->NewStringUTF("UTF-8");
+
+    jbyteArray bytes = env->NewByteArray(strlen(name));
+    env->SetByteArrayRegion(bytes, 0, strlen(name), (jbyte*)name);
+    jstring jname = (jstring) env->NewObject(strClass, ctorID, bytes, encoding);
+
+	env->CallVoidMethod(this->activity, this->s_setTabStat, id, jname, score, ping);
+}
+
+void CJavaWrapper::ShowWelcome(bool a) {
+
+    JNIEnv* env = GetEnv();
+
+	if (!env)
+	{
+		Log("No env");
+		return;
+	}
+    env->CallVoidMethod(this->activity, this->s_showWelcome, a);
+}
+
+void CJavaWrapper::ShowTwitter(bool a, const char* caption) {
+    JNIEnv* env = GetEnv();
+
+    if (!env) {
+        Log("No env twitter");
+        return;
+    }
+
+    // แปลงข้อความ UTF-8 เป็น UTF-16
+    std::u16string utf16_caption;
+    for (size_t i = 0; i < strlen(caption); ++i) {
+        unsigned char c = static_cast<unsigned char>(caption[i]);
+        if (c < 0x80) {
+            utf16_caption += c;
+        } else if (c < 0xE0) {
+            utf16_caption += ((c & 0x1F) << 6) | (caption[++i] & 0x3F);
+        } else {
+            utf16_caption += ((c & 0x0F) << 12) | ((caption[++i] & 0x3F) << 6) | (caption[++i] & 0x3F);
+        }
+    }
+
+    // แปลง UTF-16 เป็น jstring
+    jsize length = utf16_caption.size();
+    jchar* jcharArray = new jchar[length];
+    std::copy(utf16_caption.begin(), utf16_caption.end(), jcharArray);
+    jstring jCaption = env->NewString(jcharArray, length);
+
+    delete[] jcharArray;
+
+    // เรียกใช้ method showTwitter
+    env->CallVoidMethod(this->activity, this->s_showTwitter, a, jCaption);
+
+    // ตรวจสอบ exception หลังจากเรียกใช้ JNI method
+    EXCEPTION_CHECK(env);
+}
+
+
 
 
 
@@ -984,6 +1021,7 @@ CJavaWrapper::CJavaWrapper(JNIEnv* env, jobject activity)
 //	s_showSplash = env->GetMethodID(nvEventClass, OBFUSCATE("showSplash"), OBFUSCATE("()V"));
 	
 	s_showWelcome = env->GetMethodID(nvEventClass, OBFUSCATE("showWelcome"), OBFUSCATE("(Z)V"));
+	s_showTwitter = env->GetMethodID(nvEventClass, OBFUSCATE("showTwitter"), OBFUSCATE("(ZLjava/lang/String;)V"));
 	
 //	s_showNotification = env->GetMethodID(nvEventClass, OBFUSCATE("showNotification"),OBFUSCATE("(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;)V"));
 	

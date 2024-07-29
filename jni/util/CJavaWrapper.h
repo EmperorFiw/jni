@@ -42,6 +42,7 @@ class CJavaWrapper
 	jmethodID s_updateSpeedInfo;
 	
 	jmethodID s_showWelcome;
+	jmethodID s_showTwitter;
 	
 	jmethodID s_showMenu;
 	
@@ -75,12 +76,11 @@ public:
 	void ShowTabWindow();
 	void SetTabStat(int id, char* name, int score, int ping);
 	
-
-	
-	
 	
 	void SetPauseState(bool a1);
 	void ShowWelcome(bool a);
+
+	void ShowTwitter(bool a, const char* caption);
 
 	
 //	void JointClient(int joint, bool bloked);

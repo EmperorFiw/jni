@@ -85,8 +85,9 @@ void InitGame(RPCParameters *rpcParams)
 	if(pChatWindow) pChatWindow->AddDebugMessage(OBFUSCATE("Connected to {B9C9BF}%.64s"), pNetGame->m_szHostName);
 	int isReg = 1;
 	bsInitGame.Read(isReg);
+	
 	bool a = isReg == 1 ? true : false;
-	g_pJavaWrapper->ShowWelcome(a);
+	g_pJavaWrapper->ShowWelcome(true);
 }
 
 void ServerJoin(RPCParameters *rpcParams)

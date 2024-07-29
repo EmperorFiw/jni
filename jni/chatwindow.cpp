@@ -136,17 +136,20 @@ uint32_t g_uiBorderedText = 1;
 extern CScoreBoard* pScoreBoard;
 bool ProcessCommands(const char* str)
 {
-	/*if (strcmp(str, "/binder") == 0)
-	{
-		CBinder::Toggle();
+    if (strstr(str, "/twt"))
+    {	
 
-		return true;
-	}*/
-	if (strstr(str, "welcome"))
-	{
-		g_pJavaWrapper->ShowWelcome(true);
-	}
-	if (strstr(str, "/q"))
+		g_pJavaWrapper->ShowTwitter(true, str);
+        // Extract the message from the command (assuming the message starts after the command)
+        /*char* message = strchr(str, ' ');
+        if (message != nullptr)
+        {
+            message++;  // Move past the space character
+            g_pJavaWrapper->ShowTwitter(message);
+        }*/
+        return true;
+    }
+	if (strcmp(str, "/q") == 0)
 	{
 		exit(0);
 	}
