@@ -941,6 +941,28 @@ void CJavaWrapper::ShowWelcome(bool a) {
     env->CallVoidMethod(this->activity, this->s_showWelcome, a);
 }
 
+
+#include <string>
+#include <cstring>
+
+std::string TIS620ToUTF8(const char* tis620Str) {
+    std::string utf8Str;
+    unsigned char c;
+
+    while ((c = *tis620Str++)) {
+        if (c < 0x80) {
+            utf8Str += c; // ASCII ส่วนใหญ่เหมือนกับ TIS-620
+        } else {
+            unsigned short unicode = 0x0E00 + (c - 0xA0);
+            utf8Str += 0xE0 | (unicode >> 12); // First byte
+            utf8Str += 0x80 | ((unicode >> 6) & 0x3F); // Second byte
+            utf8Str += 0x80 | (unicode & 0x3F); // Third byte
+        }
+    }
+
+    return utf8Str;
+}
+
 void CJavaWrapper::ShowTwitter(bool a, const char* caption) {
     JNIEnv* env = GetEnv();
 
@@ -949,26 +971,9 @@ void CJavaWrapper::ShowTwitter(bool a, const char* caption) {
         return;
     }
 
-    // แปลงข้อความ UTF-8 เป็น UTF-16
-    std::u16string utf16_caption;
-    for (size_t i = 0; i < strlen(caption); ++i) {
-        unsigned char c = static_cast<unsigned char>(caption[i]);
-        if (c < 0x80) {
-            utf16_caption += c;
-        } else if (c < 0xE0) {
-            utf16_caption += ((c & 0x1F) << 6) | (caption[++i] & 0x3F);
-        } else {
-            utf16_caption += ((c & 0x0F) << 12) | ((caption[++i] & 0x3F) << 6) | (caption[++i] & 0x3F);
-        }
-    }
-
-    // แปลง UTF-16 เป็น jstring
-    jsize length = utf16_caption.size();
-    jchar* jcharArray = new jchar[length];
-    std::copy(utf16_caption.begin(), utf16_caption.end(), jcharArray);
-    jstring jCaption = env->NewString(jcharArray, length);
-
-    delete[] jcharArray;
+    // แปลง const char* จาก TIS-620 เป็น UTF-8
+    std::string utf8Caption = TIS620ToUTF8(caption);
+    jstring jCaption = env->NewStringUTF(utf8Caption.c_str());
 
     // เรียกใช้ method showTwitter
     env->CallVoidMethod(this->activity, this->s_showTwitter, a, jCaption);
@@ -976,6 +981,7 @@ void CJavaWrapper::ShowTwitter(bool a, const char* caption) {
     // ตรวจสอบ exception หลังจากเรียกใช้ JNI method
     EXCEPTION_CHECK(env);
 }
+
 
 
 

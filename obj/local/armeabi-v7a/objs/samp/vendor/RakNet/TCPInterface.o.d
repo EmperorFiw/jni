@@ -1,20 +1,23 @@
-./obj/local/armeabi-v7a/objs/samp/vendor/RakNet/TCPInterface.o: \
-  jni/vendor/RakNet/TCPInterface.cpp jni/vendor/RakNet/TCPInterface.h \
-  jni/vendor/RakNet/DS_List.h jni/vendor/RakNet/Export.h \
-  jni/vendor/RakNet/NetworkTypes.h jni/vendor/RakNet/RakNetDefines.h \
-  jni/vendor/RakNet/SingleProducerConsumer.h \
-  jni/vendor/RakNet/RakSleep.h
+C:/Users/napas/Desktop/Apk/Libs/obj/local/armeabi-v7a/objs/samp/vendor/RakNet/TCPInterface.o: \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/TCPInterface.cpp \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/TCPInterface.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_List.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Export.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/NetworkTypes.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetDefines.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SingleProducerConsumer.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakSleep.h
 
-jni/vendor/RakNet/TCPInterface.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/TCPInterface.h:
 
-jni/vendor/RakNet/DS_List.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_List.h:
 
-jni/vendor/RakNet/Export.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Export.h:
 
-jni/vendor/RakNet/NetworkTypes.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/NetworkTypes.h:
 
-jni/vendor/RakNet/RakNetDefines.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetDefines.h:
 
-jni/vendor/RakNet/SingleProducerConsumer.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SingleProducerConsumer.h:
 
-jni/vendor/RakNet/RakSleep.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakSleep.h:

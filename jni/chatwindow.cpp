@@ -133,22 +133,16 @@ uint32_t g_uiBorderedText = 1;
 #include "game/CCustomPlateManager.h"
 #include <fcntl.h>
 
+
 extern CScoreBoard* pScoreBoard;
 bool ProcessCommands(const char* str)
 {
     if (strstr(str, "/twt"))
     {	
-
-		g_pJavaWrapper->ShowTwitter(true, str);
-        // Extract the message from the command (assuming the message starts after the command)
-        /*char* message = strchr(str, ' ');
-        if (message != nullptr)
-        {
-            message++;  // Move past the space character
-            g_pJavaWrapper->ShowTwitter(message);
-        }*/
+        g_pJavaWrapper->ShowTwitter(true, str);
         return true;
     }
+
 	if (strcmp(str, "/q") == 0)
 	{
 		exit(0);

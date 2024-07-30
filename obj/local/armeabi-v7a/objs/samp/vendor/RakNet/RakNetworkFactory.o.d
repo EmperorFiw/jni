@@ -1,106 +1,122 @@
-./obj/local/armeabi-v7a/objs/samp/vendor/RakNet/RakNetworkFactory.o: \
-  jni/vendor/RakNet/RakNetworkFactory.cpp \
-  jni/vendor/RakNet/LogCommandParser.h \
-  jni/vendor/RakNet/CommandParserInterface.h \
-  jni/vendor/RakNet/NetworkTypes.h jni/vendor/RakNet/RakNetDefines.h \
-  jni/vendor/RakNet/Export.h jni/vendor/RakNet/DS_OrderedList.h \
-  jni/vendor/RakNet/DS_List.h jni/vendor/RakNet/RakNetworkFactory.h \
-  jni/vendor/RakNet/RakServerInterface.h \
-  jni/vendor/RakNet/PacketPriority.h \
-  jni/vendor/RakNet/RakPeerInterface.h jni/vendor/RakNet/BitStream.h \
-  jni/vendor/RakNet/RakNetStatistics.h \
-  jni/vendor/RakNet/RakClientInterface.h jni/vendor/RakNet/RakServer.h \
-  jni/vendor/RakNet/RakPeer.h jni/vendor/RakNet/ReliabilityLayer.h \
-  jni/vendor/RakNet/SocketLayer.h \
-  jni/vendor/RakNet/ClientContextStruct.h jni/vendor/RakNet/MTUSize.h \
-  jni/vendor/RakNet/DS_LinkedList.h jni/vendor/RakNet/DS_Queue.h \
-  jni/vendor/RakNet/InternalPacket.h \
-  jni/vendor/RakNet/InternalPacketPool.h \
-  jni/vendor/RakNet/DataBlockEncryptor.h jni/vendor/RakNet/rijndael.h \
-  jni/vendor/RakNet/SHA1.h jni/vendor/RakNet/Types.h \
-  jni/vendor/RakNet/DS_RangeList.h jni/vendor/RakNet/DS_BPlusTree.h \
-  jni/vendor/RakNet/DS_MemoryPool.h jni/vendor/RakNet/RPCNode.h \
-  jni/vendor/RakNet/RSACrypt.h jni/vendor/RakNet/BigTypes.h \
-  jni/vendor/RakNet/Rand.h jni/vendor/RakNet/SingleProducerConsumer.h \
-  jni/vendor/RakNet/RPCMap.h jni/vendor/RakNet/SimpleMutex.h \
-  jni/vendor/RakNet/DS_QueueLinkedList.h jni/vendor/RakNet/RakClient.h
+C:/Users/napas/Desktop/Apk/Libs/obj/local/armeabi-v7a/objs/samp/vendor/RakNet/RakNetworkFactory.o: \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetworkFactory.cpp \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/LogCommandParser.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/CommandParserInterface.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/NetworkTypes.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetDefines.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Export.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_OrderedList.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_List.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetworkFactory.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakServerInterface.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/PacketPriority.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakPeerInterface.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/BitStream.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetStatistics.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakClientInterface.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakServer.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakPeer.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/ReliabilityLayer.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SocketLayer.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/ClientContextStruct.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/MTUSize.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_LinkedList.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_Queue.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/InternalPacket.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/InternalPacketPool.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DataBlockEncryptor.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/rijndael.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SHA1.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Types.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_RangeList.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_BPlusTree.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_MemoryPool.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RPCNode.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RSACrypt.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/BigTypes.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Rand.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SingleProducerConsumer.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RPCMap.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SimpleMutex.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_QueueLinkedList.h \
+  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakClient.h
 
-jni/vendor/RakNet/LogCommandParser.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/LogCommandParser.h:
 
-jni/vendor/RakNet/CommandParserInterface.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/CommandParserInterface.h:
 
-jni/vendor/RakNet/NetworkTypes.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/NetworkTypes.h:
 
-jni/vendor/RakNet/RakNetDefines.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetDefines.h:
 
-jni/vendor/RakNet/Export.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Export.h:
 
-jni/vendor/RakNet/DS_OrderedList.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_OrderedList.h:
 
-jni/vendor/RakNet/DS_List.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_List.h:
 
-jni/vendor/RakNet/RakNetworkFactory.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetworkFactory.h:
 
-jni/vendor/RakNet/RakServerInterface.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakServerInterface.h:
 
-jni/vendor/RakNet/PacketPriority.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/PacketPriority.h:
 
-jni/vendor/RakNet/RakPeerInterface.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakPeerInterface.h:
 
-jni/vendor/RakNet/BitStream.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/BitStream.h:
 
-jni/vendor/RakNet/RakNetStatistics.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakNetStatistics.h:
 
-jni/vendor/RakNet/RakClientInterface.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakClientInterface.h:
 
-jni/vendor/RakNet/RakServer.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakServer.h:
 
-jni/vendor/RakNet/RakPeer.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakPeer.h:
 
-jni/vendor/RakNet/ReliabilityLayer.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/ReliabilityLayer.h:
 
-jni/vendor/RakNet/SocketLayer.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SocketLayer.h:
 
-jni/vendor/RakNet/ClientContextStruct.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/ClientContextStruct.h:
 
-jni/vendor/RakNet/MTUSize.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/MTUSize.h:
 
-jni/vendor/RakNet/DS_LinkedList.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_LinkedList.h:
 
-jni/vendor/RakNet/DS_Queue.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_Queue.h:
 
-jni/vendor/RakNet/InternalPacket.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/InternalPacket.h:
 
-jni/vendor/RakNet/InternalPacketPool.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/InternalPacketPool.h:
 
-jni/vendor/RakNet/DataBlockEncryptor.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DataBlockEncryptor.h:
 
-jni/vendor/RakNet/rijndael.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/rijndael.h:
 
-jni/vendor/RakNet/SHA1.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SHA1.h:
 
-jni/vendor/RakNet/Types.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Types.h:
 
-jni/vendor/RakNet/DS_RangeList.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_RangeList.h:
 
-jni/vendor/RakNet/DS_BPlusTree.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_BPlusTree.h:
 
-jni/vendor/RakNet/DS_MemoryPool.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_MemoryPool.h:
 
-jni/vendor/RakNet/RPCNode.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RPCNode.h:
 
-jni/vendor/RakNet/RSACrypt.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RSACrypt.h:
 
-jni/vendor/RakNet/BigTypes.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/BigTypes.h:
 
-jni/vendor/RakNet/Rand.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/Rand.h:
 
-jni/vendor/RakNet/SingleProducerConsumer.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SingleProducerConsumer.h:
 
-jni/vendor/RakNet/RPCMap.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RPCMap.h:
 
-jni/vendor/RakNet/SimpleMutex.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/SimpleMutex.h:
 
-jni/vendor/RakNet/DS_QueueLinkedList.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/DS_QueueLinkedList.h:
 
-jni/vendor/RakNet/RakClient.h:
+C:/Users/napas/Desktop/Apk/Libs/jni/vendor/RakNet/RakClient.h:
