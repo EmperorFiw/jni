@@ -137,12 +137,6 @@ uint32_t g_uiBorderedText = 1;
 extern CScoreBoard* pScoreBoard;
 bool ProcessCommands(const char* str)
 {
-    if (strstr(str, "/twt"))
-    {	
-        g_pJavaWrapper->ShowTwitter(true, str);
-        return true;
-    }
-
 	if (strcmp(str, "/q") == 0)
 	{
 		exit(0);
