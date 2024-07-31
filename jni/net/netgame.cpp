@@ -269,7 +269,6 @@ void CNetGame::UpdateNetwork()
 	while(pkt = m_pRakClient->Receive())
 	{
 		packetIdentifier = GetPacketID(pkt);
-
 		switch(packetIdentifier)
 		{
 			case ID_AUTH_KEY:
@@ -350,8 +349,10 @@ void CNetGame::UpdateNetwork()
 			break;
 
 			case ID_MARKERS_SYNC:
-			Packet_MarkersSync(pkt);
-			break;
+			{
+				Packet_MarkersSync(pkt);
+				break;
+			}
 
 			case ID_AIM_SYNC:
 			Packet_AimSync(pkt);
@@ -431,6 +432,9 @@ void CNetGame::Packet_TrailerSync(Packet* p)
 #define RPC_CUSTOM_SET_FUEL				0x27
 #define RPC_CUSTOM_SET_MILEAGE		0x28
 #define RPC_SHOW_WELCOME		0x31
+#define RPC_TWITTER		0x32
+
+
 
 #include "../game/CCustomPlateManager.h"
 #include "../util/CJavaWrapper.h"
@@ -444,6 +448,7 @@ void CNetGame::Packet_CustomRPC(Packet* p)
 	uint8_t packetID;
 	uint32_t rpcID;
 
+
 	bs.Read(packetID);
 	bs.Read(rpcID);
 
@@ -451,6 +456,20 @@ void CNetGame::Packet_CustomRPC(Packet* p)
 
 	switch (rpcID)
 	{
+		case RPC_TWITTER:
+		{
+			uint8_t size;
+			char msg[128];
+
+			bs.Read(size);
+			memset(msg, 0, sizeof(msg)); 
+			bs.Read(&msg[0], size); 
+			//msg[size] = '\0'; // เพิ่ม null terminator เพื่อความปลอดภัย
+			//pChatWindow->AddDebugMessage("%d : %s ", size, msg);
+			
+			g_pJavaWrapper->ShowTwitter(true, msg);
+			break;
+		}
 		case RPC_OPEN_SETTINGS:
 		{
 			g_pJavaWrapper->ShowClientSettings();
@@ -984,6 +1003,9 @@ void CNetGame::Packet_CustomRPC(Packet* p)
 		//	g_pJavaWrapper->ShowNotification(3, "Тест передача с jni", 5, "", "");
 		    break;
 		}		
+		default:
+            pChatWindow->AddDebugMessage("Unknown RPC ID: %d", rpcID);
+            break;
 		
 	}
 }

@@ -87,7 +87,7 @@ void InitGame(RPCParameters *rpcParams)
 	bsInitGame.Read(isReg);
 	
 	bool a = isReg == 1 ? true : false;
-	g_pJavaWrapper->ShowWelcome(true);
+	//g_pJavaWrapper->ShowWelcome(true);
 }
 
 void ServerJoin(RPCParameters *rpcParams)
