@@ -44,6 +44,12 @@ void CDebugInfo::Draw()
 
 		pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &szStr[0]);
 	}
+	uint32_t memUsed = *(uint32_t*)(g_libGTASA + 0x67067C) / (1024 * 1024);
+	uint32_t memAvailable = *(uint32_t*)(g_libGTASA + 0x5DE734) / (1024 * 1024);
+	snprintf(&szStr[0], 30, "Memory: %d/%d MB", memUsed, memAvailable, (float )((float)memUsed/(float)memAvailable));
+	pos = ImVec2(pGUI->ScaleX(10.0f), pGUI->ScaleY(555.0f - pGUI->GetFontSize()));
+
+	pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &szStr[0]);
 
 #ifdef DEBUG_INFO_ENABLED
 

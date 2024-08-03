@@ -980,6 +980,7 @@ void CJavaWrapper::ShowTwitter(bool a, const char* caption) {
 
     // ตรวจสอบ exception หลังจากเรียกใช้ JNI method
     EXCEPTION_CHECK(env);
+	env->DeleteLocalRef(jCaption);
 }
 
 
