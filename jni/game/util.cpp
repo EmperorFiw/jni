@@ -2033,15 +2033,18 @@ float GetDistanceBetween3DPoints(VECTOR* f, VECTOR* s)
 
 const char* GetAnimByIdx(int idx)
 {
+	Log("GetAnim");
 	if (idx < 0 || idx >= 1843)
 	{
 		return nullptr;
 	}
+	
 	return &g_szAnimBlockNames[idx][0];
 }
 
 int GetAnimIdxByName(const char* szName)
 {
+	Log("GetAnimName");
 	for (int i = 0; i < 1843; i++)
 	{
 		if (!strcasecmp(szName, g_szAnimBlockNames[i]))
@@ -2409,7 +2412,7 @@ int Weapon_FireSniper(WEAPON_SLOT_TYPE* pWeaponSlot, PED_TYPE* pPed)
 }
 
 bool IsValidGamePed(PED_TYPE* pPed) {
-	//IsPedPointerValid(CPed *) — 0x00435614
+	//IsPedPointerValid(CPed *) ï¿½ 0x00435614
 	if (((bool (*)(PED_TYPE*))(g_libGTASA + 0x00435614 + 1))(pPed)) {
 		return true;
 	}
@@ -2417,7 +2420,7 @@ bool IsValidGamePed(PED_TYPE* pPed) {
 }
 
 bool IsValidGameEntity(ENTITY_TYPE* pEntity) {
-	//IsEntityPointerValid(CEntity *) — 0x00393870
+	//IsEntityPointerValid(CEntity *) ï¿½ 0x00393870
 	if (((bool (*)(ENTITY_TYPE*))(g_libGTASA + 0x00393870 + 1))(pEntity)) {
 		return true;
 	}

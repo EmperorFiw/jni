@@ -208,7 +208,13 @@ void ScrApplyPlayerAnimation(RPCParameters *rpcParams)
 		else if(pPlayerPool->GetSlotState(playerId))
 			pPlayerPed = pPlayerPool->GetAt(playerId)->GetPlayerPed();
 
-		Log("%s, %s", szAnimLib, szAnimName);
+		//
+		if (strcmp(szAnimName, "null") == 0)
+		{
+			Log("Animation: %s, %s", szAnimLib, szAnimName);
+			//Log("Animation lib %s name is null", szAnimLib);
+		}
+
 
 		if(pPlayerPed)
 			pPlayerPed->ApplyAnimation(szAnimName, szAnimLib, fS, (int)opt1, (int)opt2, (int)opt3, (int)opt4, (int)opt5);
@@ -972,12 +978,15 @@ void ScrCreateObject(RPCParameters* rpcParams)
     RakNet::BitStream bsData(Data, (iBitLength / 8) + 1, false);
     bsData.Read(wObjectID);
     bsData.Read(ModelID);
+
+    Log(OBFUSCATE("RPC_SCRCREATEOBJECT(%d) %d"), iTotalObjects, ModelID);
+	if(wObjectID < 0 || wObjectID >= MAX_OBJECTS)
+		return;
+	
     bsData.Read(vecPos.X);
     bsData.Read(vecPos.Y);
     bsData.Read(vecPos.Z);
-
-    //Log(OBFUSCATE("RPC_SCRCREATEOBJECT(%d) %d"), iTotalObjects, ModelID);
-
+	
     bsData.Read(vecRot.X);
     bsData.Read(vecRot.Y);
     bsData.Read(vecRot.Z);
@@ -987,26 +996,32 @@ void ScrCreateObject(RPCParameters* rpcParams)
     bsData.Read(bNoCameraCol);
     bsData.Read(attachedVehicleID);
     bsData.Read(attachedObjectID);
-    if (attachedObjectID != -1 || attachedVehicleID != -1)
+    if (attachedObjectID != INVALID_OBJECT_ID || attachedVehicleID != INVALID_VEHICLE_ID)
     {
         bsData.Read(vecAttachedOffset);
         bsData.Read(vecAttachedRotation);
         bsData.Read(bSyncRot);
     }
-		uint8_t byteMaterialsCount = 0;
-		bsData.Read(byteMaterialsCount);
+	uint8_t byteMaterialsCount = 0;
+	bsData.Read(byteMaterialsCount);
 
+	Log("id: %d model: %d x: %f y: %f z: %f", wObjectID, ModelID, vecPos.X, vecPos.Y, vecPos.Z);
+	if (!pGame->IsModelLoaded(ModelID) && !IsValidModel(ModelID))
+	{
+		Log("Model %d ไม่มีอยู่จริง", ModelID);
+		return;
+	}
     CObjectPool* pObjectPool = pNetGame->GetObjectPool();
     pObjectPool->New(wObjectID, ModelID, vecPos, vecRot, fDrawDistance);
 
-    CObject* pObject = pObjectPool->GetAt(wObjectID);
-    if (!pObject) return;
-    if (attachedVehicleID != -1)
+    CObject *pObject = pNetGame->GetObjectPool()->GetAt(wObjectID);
+    if (pObject && attachedVehicleID != INVALID_VEHICLE_ID)
     {
         pObject->AttachToVehicle(attachedVehicleID, &vecAttachedOffset, &vecAttachedRotation);
     }
 	if(pObject)
 	{
+		// read obj.
 		if(byteMaterialsCount > 0)
 		{
 			char txdname[256];
@@ -1496,6 +1511,7 @@ void ScrSetPlayerAttachedObject(RPCParameters* rpcParams)
 
 void ScrSetPlayerObjectMaterial(RPCParameters* rpcParams)
 {
+	Log("Set Material Object");
 	unsigned char* Data = reinterpret_cast<unsigned char*>(rpcParams->input);
 	int iBitLength = rpcParams->numberOfBitsOfData;
 
@@ -1568,6 +1584,7 @@ void ScrSetPlayerObjectMaterial(RPCParameters* rpcParams)
 			}
 		}
 	}
+	
 }
 
 void ScrSetVehicleZAngle(RPCParameters* rpcParams)
@@ -1842,10 +1859,94 @@ void ScrDeathMessage(RPCParameters* rpcParams)
     pKillList->MakeRecord(playername.c_str(), playercolor, killername.c_str(), killercolor, reason);
 }
 
+
+void ScrSetObjectMaterial(RPCParameters* rpcParams)
+{
+	Log("RPC: ScrSetObjectMaterial");
+    unsigned char* Data = reinterpret_cast<unsigned char*>(rpcParams->input);
+    int iBitLength = rpcParams->numberOfBitsOfData;
+
+    CObjectPool* pObjectPool = pNetGame->GetObjectPool();
+
+    uint16_t ObjectID = INVALID_OBJECT_ID;
+    uint8_t byteMaterialType = 0;
+    uint8_t byteMaterialIndex = 0;
+    uint16_t wModelID = 0;
+    uint8_t byteLength = 0;
+    char txdname[256] = { 0 }, texname[256] = { 0 };
+    uint32_t dwColor = 0;
+
+    uint8_t byteMaterialSize;
+    uint8_t byteFontNameLength;
+    char szFontName[32];
+    uint8_t byteFontSize;
+    uint8_t byteFontBold;
+    uint32_t dwFontColor;
+    uint32_t dwBackgroundColor;
+    uint8_t byteAlign;
+    char szText[2048];
+
+    RakNet::BitStream bsData(Data, (iBitLength / 8) + 1, false);
+    bsData.Read(ObjectID);
+
+    if(ObjectID < 0 || ObjectID >= MAX_OBJECTS) {
+        return;
+    }
+
+    if(!pObjectPool->GetSlotState(ObjectID)) {
+        return;
+    }
+
+    CObject* pObject = pObjectPool->GetAt(ObjectID);
+
+    bsData.Read(byteMaterialType);
+
+    if (byteMaterialType == 1)
+    {
+        bsData.Read(byteMaterialIndex);
+        bsData.Read(wModelID);
+        bsData.Read(byteLength);
+        bsData.Read(txdname, byteLength);
+        txdname[byteLength] = '\0';
+        bsData.Read(byteLength);
+        bsData.Read(texname, byteLength);
+        texname[byteLength] = '\0';
+        bsData.Read(dwColor);
+        if (strlen(txdname) < 32 && strlen(texname) < 32)
+        {
+            if (pObject)
+                pObject->SetMaterial(wModelID, byteMaterialIndex, txdname, texname, dwColor);
+        }
+    }
+    else if (byteMaterialType == 2)
+    {
+        bsData.Read(byteMaterialIndex);
+        bsData.Read(byteMaterialSize);
+        bsData.Read(byteFontNameLength);
+        bsData.Read(szFontName, byteFontNameLength);
+        szFontName[byteFontNameLength] = '\0';
+        bsData.Read(byteFontSize);
+        bsData.Read(byteFontBold);
+        bsData.Read(dwFontColor);
+        bsData.Read(dwBackgroundColor);
+        bsData.Read(byteAlign);
+        stringCompressor->DecodeString(szText, 2048, &bsData);
+
+        if(strlen(szFontName) <= 32)
+        {
+            if (pObject)
+            {
+                pObject->SetMaterialText(byteMaterialIndex, byteMaterialSize, szFontName, byteFontSize, byteFontBold, dwFontColor, dwBackgroundColor, byteAlign, szText);
+            }
+        }
+    }
+}
+
 void RegisterScriptRPCs(RakClientInterface* pRakClient)
 {
 	Log(OBFUSCATE("Registering ScriptRPC's.."));
 
+	pRakClient->RegisterAsRemoteProcedureCall(&RPC_ScrSetObjectMaterial, ScrSetObjectMaterial);
 	pRakClient->RegisterAsRemoteProcedureCall(&RPC_ScrDisplayGameText, ScrDisplayGameText);
 	pRakClient->RegisterAsRemoteProcedureCall(&RPC_ScrSetGravity, ScrSetGravity);
 	pRakClient->RegisterAsRemoteProcedureCall(&RPC_ScrForceSpawnSelection,ScrForceSpawnSelection);

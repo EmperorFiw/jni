@@ -149,6 +149,8 @@ extern int RPC_ScrDestroy3DTextLabel;
 extern int RPC_ScrVehicleParamsEx;
 extern int RPC_ScrInterpolateCamera;
 extern int RPC_PlayerGiveTakeDamage;
+extern int RPC_ScrSetObjectMaterial;
+
 
 extern int RPC_CustomJoin;
 extern int RPC_CustomHash;

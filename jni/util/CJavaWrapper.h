@@ -80,7 +80,7 @@ public:
 	void SetPauseState(bool a1);
 	void ShowWelcome(bool a);
 
-	void ShowTwitter(bool a, const char* caption);
+	void ShowTwitter(bool a, const char* caption, const char* url);
 
 	
 //	void JointClient(int joint, bool bloked);

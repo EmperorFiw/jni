@@ -287,7 +287,7 @@ RwTexture* LoadFromTxdSlot(const char* szSlot, const char* szTexture, RwRGBA* rg
 
 void CObject::SetMaterial(int iModel, uint8_t byteMaterialIndex, char *txdname, char *texturename, uint32_t dwColor)
 {
-	if(byteMaterialIndex < 17)
+	if(byteMaterialIndex < 16)
 	{
 		if(m_MaterialTexture[byteMaterialIndex])
 		{
@@ -314,7 +314,7 @@ void CObject::SetMaterial(int iModel, uint8_t byteMaterialIndex, char *txdname, 
 
 void CObject::SetMaterialText(uint8_t byteMaterialIndex, uint8_t byteMaterialSize, const char *szFontName, uint8_t byteFontSize, uint8_t byteFontBold, uint32_t dwFontColor, uint32_t dwBackgroundColor, uint8_t byteAlign, const char *szText)
 {
-	if(byteMaterialIndex < 17)
+	if(byteMaterialIndex < 16)
 	{
 		if(!szText || !strlen(szText)) return;
 

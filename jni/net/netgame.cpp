@@ -278,7 +278,7 @@ void CNetGame::UpdateNetwork()
 
 			case ID_CONNECTION_BANNED:
 			case ID_CONNECTION_ATTEMPT_FAILED:
-			pChatWindow->AddDebugMessage(OBFUSCATE("The server didn't respond. Retrying.."));
+			pChatWindow->AddDebugMessage(OBFUSCATE("Server not responding, reconnecting..."));
 			SetGameState(GAMESTATE_WAIT_CONNECT);
 
 			// voice
@@ -287,7 +287,7 @@ void CNetGame::UpdateNetwork()
 			break;
 
 			case ID_NO_FREE_INCOMING_CONNECTIONS:
-			pChatWindow->AddDebugMessage(OBFUSCATE("The server is full. Retrying..."));
+			pChatWindow->AddDebugMessage(OBFUSCATE("Server is full of players. Trying to reconnect..."));
 			SetGameState(GAMESTATE_WAIT_CONNECT);
 
 			// voice
@@ -430,9 +430,9 @@ void CNetGame::Packet_TrailerSync(Packet* p)
 
 #define RPC_CHECK_CASH					0x26
 #define RPC_CUSTOM_SET_FUEL				0x27
-#define RPC_CUSTOM_SET_MILEAGE		0x28
-#define RPC_SHOW_WELCOME		0x31
-#define RPC_TWITTER		0x32
+#define RPC_CUSTOM_SET_MILEAGE			0x28
+#define RPC_SHOW_WELCOME				0x31
+#define RPC_TWITTER						0x32
 
 
 
@@ -459,15 +459,19 @@ void CNetGame::Packet_CustomRPC(Packet* p)
 		case RPC_TWITTER:
 		{
 			uint8_t size;
+			uint8_t sizeUrl;
 			char msg[128];
+			char url[128];
 
 			bs.Read(size);
 			memset(msg, 0, sizeof(msg)); 
 			bs.Read(&msg[0], size); 
-			//msg[size] = '\0'; // เพิ่ม null terminator เพื่อความปลอดภัย
-			//pChatWindow->AddDebugMessage("%d : %s ", size, msg);
 			
-			g_pJavaWrapper->ShowTwitter(true, msg);
+			bs.Read(sizeUrl);
+			memset(url, 0, sizeof(url)); 
+			bs.Read(&url[0], sizeUrl); 
+			
+			g_pJavaWrapper->ShowTwitter(true, msg, url);
 			break;
 		}
 		case RPC_OPEN_SETTINGS:

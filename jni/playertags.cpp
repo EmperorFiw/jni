@@ -16,7 +16,7 @@ CPlayerTags::CPlayerTags()
 	Log("Loading afk_icon..");
 	m_pAfk_icon = (RwTexture*)LoadTextureFromDB(OBFUSCATE("samp"), OBFUSCATE("afk_icon"));
 #ifdef GAME_EDITION_CR
-	m_pKeyboard_icon = (RwTexture*)LoadTextureFromDB(OBFUSCATE("samp"), OBFUSCATE("keyboard_icon"));
+	m_pKeyboard_icon = (RwTexture*)LoadTextureFromDB(OBFUSCATE("menu"), OBFUSCATE("menu_mainlanguage"));
 #else
 	m_pKeyboard_icon = nullptr;
 #endif
@@ -266,7 +266,7 @@ void CPlayerTags::Draw(VECTOR* vec, char* szName, uint32_t dwColor,
 	// Health Bar
 	if(fHealth < 0.0f) return;
 
-	// округляем
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	Out.X = (float)((int)Out.X);
 	Out.Y = (float)((int)Out.Y);
 

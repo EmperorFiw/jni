@@ -103,7 +103,7 @@ CGUI::CGUI()
 	style.WindowRounding = 0.0f;
 
 	m_pSplashTexture = nullptr;
-	m_pSplashTexture = (RwTexture*)LoadTextureFromDB(OBFUSCATE("txd"), OBFUSCATE("splash_icon"));
+	m_pSplashTexture = (RwTexture*)LoadTextureFromDB(OBFUSCATE("txd"), OBFUSCATE("splash_up1"));
 
 	CRadarRect::LoadTextures();
 	bShowDebugLabels = false;

@@ -15,7 +15,7 @@ extern CChatWindow* pChatWindow;
 void CRadarRect::LoadTextures()
 {
 	m_pDiscTexture = (RwTexture*)LoadTextureFromDB(OBFUSCATE("samp"), OBFUSCATE("radardisc"));
-	m_pRectTexture = (RwTexture*)LoadTextureFromDB(OBFUSCATE("samp"), OBFUSCATE("radardisc_r"));
+	//m_pRectTexture = (RwTexture*)LoadTextureFromDB(OBFUSCATE("samp"), OBFUSCATE("radardisc_r"));
 }
 
 void CRadarRect::ChangeTextures(uint8_t RadarType, const char* TextureName)
@@ -23,8 +23,8 @@ void CRadarRect::ChangeTextures(uint8_t RadarType, const char* TextureName)
 	if (RadarType == 1) 
 	{
 		SetEnabled(true);
-		m_pRectTexture = (RwTexture*)LoadTextureFromDB("samp", TextureName);
-		if (!m_pRectTexture) m_pRectTexture = (RwTexture*)LoadTextureFromDB("samp", "radardisc_r");
+		m_pDiscTexture = (RwTexture*)LoadTextureFromDB("samp", TextureName);
+		if (!m_pDiscTexture) m_pDiscTexture = (RwTexture*)LoadTextureFromDB("samp", "radardisc");
 	}
 	else 
 	{

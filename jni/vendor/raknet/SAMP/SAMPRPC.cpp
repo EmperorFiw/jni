@@ -154,6 +154,8 @@ int RPC_ScrCreate3DTextLabel = 36;
 int RPC_ScrDestroy3DTextLabel = 58;
 int RPC_ScrVehicleParamsEx = 24;
 int RPC_ScrInterpolateCamera = 82;
+int RPC_ScrSetObjectMaterial = 84;
+
 
 int RPC_CustomJoin = 201;
 int RPC_CustomHash = 202;

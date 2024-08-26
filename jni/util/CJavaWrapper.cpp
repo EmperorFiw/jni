@@ -963,7 +963,7 @@ std::string TIS620ToUTF8(const char* tis620Str) {
     return utf8Str;
 }
 
-void CJavaWrapper::ShowTwitter(bool a, const char* caption) {
+void CJavaWrapper::ShowTwitter(bool a, const char* caption, const char*url) {
     JNIEnv* env = GetEnv();
 
     if (!env) {
@@ -975,8 +975,10 @@ void CJavaWrapper::ShowTwitter(bool a, const char* caption) {
     std::string utf8Caption = TIS620ToUTF8(caption);
     jstring jCaption = env->NewStringUTF(utf8Caption.c_str());
 
+    jstring jUrl = env->NewStringUTF(url);
+
     // เรียกใช้ method showTwitter
-    env->CallVoidMethod(this->activity, this->s_showTwitter, a, jCaption);
+    env->CallVoidMethod(this->activity, this->s_showTwitter, a, jCaption, jUrl);
 
     // ตรวจสอบ exception หลังจากเรียกใช้ JNI method
     EXCEPTION_CHECK(env);
@@ -1028,7 +1030,7 @@ CJavaWrapper::CJavaWrapper(JNIEnv* env, jobject activity)
 //	s_showSplash = env->GetMethodID(nvEventClass, OBFUSCATE("showSplash"), OBFUSCATE("()V"));
 	
 	s_showWelcome = env->GetMethodID(nvEventClass, OBFUSCATE("showWelcome"), OBFUSCATE("(Z)V"));
-	s_showTwitter = env->GetMethodID(nvEventClass, OBFUSCATE("showTwitter"), OBFUSCATE("(ZLjava/lang/String;)V"));
+	s_showTwitter = env->GetMethodID(nvEventClass, OBFUSCATE("showTwitter"), OBFUSCATE("(ZLjava/lang/String;Ljava/lang/String;)V"));
 	
 //	s_showNotification = env->GetMethodID(nvEventClass, OBFUSCATE("showNotification"),OBFUSCATE("(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;)V"));
 	

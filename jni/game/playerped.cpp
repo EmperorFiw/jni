@@ -1638,13 +1638,16 @@ void CPlayerPed::SetFightingStyle(int iStyle)
 void CPlayerPed::ApplyAnimation( char *szAnimName, char *szAnimFile, float fT,
 								 int opt1, int opt2, int opt3, int opt4, int iUnk )
 {
-	
+	if(!IsValidGamePed(m_pPed) || !GamePool_Ped_GetAt(m_dwGTAId)) {
+		return;
+	}
+
 	int iWaitAnimLoad = 0;
 
 	if(!m_pPed) return;
 	if(!GamePool_Ped_GetAt(m_dwGTAId)) return;
 
-	if(!strcasecmp(szAnimFile,OBFUSCATE("SEX"))) return;
+	//if(!strcasecmp(szAnimFile,OBFUSCATE("SEX"))) return;
 
 	if(!pGame->IsAnimationLoaded(szAnimFile))
 	{

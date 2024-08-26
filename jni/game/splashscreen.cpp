@@ -49,7 +49,8 @@ unsigned int color_scheme = 0;
 void LoadSplashTexture()
 {
 	Log("Loading splash texture..");
-	splashTexture = (RwTexture*)LoadTextureFromDB("samp", "br-screen");
+	splashTexture = (RwTexture*)LoadTextureFromDB("menu", "menu_main1");
+	//splashTexture = (RwTexture*)LoadTextureFromDB("samp", "br-screen");
 
 	color_scheme = 1;
 }
