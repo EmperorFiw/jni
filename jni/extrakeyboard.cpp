@@ -65,15 +65,15 @@ void CExtraKeyBoard::Render()
 				
 				ImGui::SameLine(0, 15);
 				if(ImGui::ImageButton((ImTextureID)MicroIcon::DataIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/apk2");
+					pNetGame->SendChatCommand("/stats");
 				
 				ImGui::SameLine(0, 15);//ปุ่มALT เกี่ยวกับรถ
 				if(ImGui::ImageButton((ImTextureID)MicroIcon::GpsIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/apk3");
+					pNetGame->SendChatCommand("/gps");
 					
 				ImGui::SameLine(0, 15);
 				if(ImGui::ImageButton((ImTextureID)MicroIcon::PhoneIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/apk4");
+					pNetGame->SendChatCommand("/phone");
 
 				ImGui::SameLine(0, 15);
 				if(ImGui::ImageButton((ImTextureID)MicroIcon::AnimationIcon->raster, ImVec2(70,70)))
