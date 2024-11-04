@@ -103,7 +103,7 @@ CGUI::CGUI()
 	style.WindowRounding = 0.0f;
 
 	m_pSplashTexture = nullptr;
-	m_pSplashTexture = (RwTexture*)LoadTextureFromDB(OBFUSCATE("txd"), OBFUSCATE("splash_up1"));
+	m_pSplashTexture = (RwTexture*)LoadTextureFromDB(OBFUSCATE("txd"), OBFUSCATE("splash_icon"));
 
 	CRadarRect::LoadTextures();
 	bShowDebugLabels = false;
@@ -241,7 +241,7 @@ void CGUI::ShowSpeed(){
             bLights = pVehicle->GetLightsState();
         }
     }
-	g_pJavaWrapper->ShowSpeed();
+	//g_pJavaWrapper->ShowSpeed();
 	g_pJavaWrapper->UpdateSpeedInfo(i_speed, m_fuel, bHealth, bMeliage, bEngine, bLights, 0, bDoor);
 }
 

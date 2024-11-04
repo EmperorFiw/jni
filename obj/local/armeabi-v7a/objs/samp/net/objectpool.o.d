@@ -1,6 +1,5 @@
-C:/Users/napas/Desktop/Apk/Libs/obj/local/armeabi-v7a/objs/samp/net/objectpool.o: \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/objectpool.cpp \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../main.h \
+./obj/local/armeabi-v7a/objs/samp/net/objectpool.o: \
+  jni/net/objectpool.cpp jni/net/../main.h \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib \
@@ -17,103 +16,63 @@ C:/Users/napas/Desktop/Apk/Libs/obj/local/armeabi-v7a/objs/samp/net/objectpool.o
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/common.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/RenderWare.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/skeleton.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rwcore.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rwplcore.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/errcore.def \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/errcom.def \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpcriter.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rperror.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rphanim.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpworld.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtquat.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtanim.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpmatfx.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpskin.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpuvanim.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtdict.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/obfuscate/str_obfuscate.hpp \
+  jni/game/RW/common.h jni/game/RW/RenderWare.h jni/game/RW/skeleton.h \
+  jni/game/RW/rwcore.h jni/game/RW/rwplcore.h jni/game/RW/errcore.def \
+  jni/game/RW/errcom.def jni/game/RW/rpcriter.h jni/game/RW/rperror.h \
+  jni/game/RW/rphanim.h jni/game/RW/rpworld.h jni/game/RW/rtquat.h \
+  jni/game/RW/rtanim.h jni/game/RW/rpmatfx.h jni/game/RW/rpskin.h \
+  jni/game/RW/rpuvanim.h jni/game/RW/rtdict.h \
+  jni/vendor/obfuscate/str_obfuscate.hpp \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/raknet/SAMP/samp_netencr.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor/raknet/SAMP/SAMPRPC.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/util/util.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/bass/bass.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/bass/bass_fx.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/opus/opus.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/opus/opus_types.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/opus/opus_defines.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_bits.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_types.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_config_types.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_echo.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_preprocess.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/game.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/rgba.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/aimstuff.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/pad.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/quaternion.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/entity.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/playerped.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CRemoteData.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CStats.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/vehicle.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/object.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/camera.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/font.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/scripting.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/radarcolors.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/util.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/textdraw.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/sprite2d.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/widget.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/widgetmanager.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/stream.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CHandlingDefault.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CActorPed.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CExtendedCarColors.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CWeaponsOutFit.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CRadarRect.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CAdjustableHudColors.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CAdjustableHudPosition.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CInfoBarText.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CAdjustableHudScale.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CFirstPersonCamera.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CSnow.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/snapshothelper.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/netgame.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakClientInterface.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/NetworkTypes.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakNetDefines.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/Export.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/PacketPriority.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakPeerInterface.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/BitStream.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakNetStatistics.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakNetworkFactory.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/PacketEnumerations.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/StringCompressor.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/DS_Map.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/DS_OrderedList.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/DS_List.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/localplayer.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/remoteplayer.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/rijndael.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/playerpool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/vehiclepool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/gangzonepool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/objectpool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/pickuppool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/textlabelpool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/textdrawpool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/..//gui/ITouchListener.h \
+  jni/vendor/raknet/SAMP/samp_netencr.h jni/vendor/raknet/SAMP/SAMPRPC.h \
+  jni/util/util.h jni/vendor\audio/bass/bass.h \
+  jni/vendor\audio/bass/bass_fx.h jni/vendor\audio/opus/opus.h \
+  jni/vendor\audio/opus/opus_types.h \
+  jni/vendor\audio/opus/opus_defines.h jni/vendor\audio/speex/speex.h \
+  jni/vendor\audio/speex/speex_bits.h \
+  jni/vendor\audio/speex/speex_types.h \
+  jni/vendor\audio/speex/speex_config_types.h \
+  jni/vendor\audio/speex/speex_echo.h \
+  jni/vendor\audio/speex/speex_preprocess.h jni/net/../game/game.h \
+  jni/net/../game/rgba.h jni/net/../game/aimstuff.h \
+  jni/net/../game/pad.h jni/net/../game/quaternion.h \
+  jni/net/../game/entity.h jni/net/../game/playerped.h \
+  jni/net/../game/CRemoteData.h jni/net/../game/CStats.h \
+  jni/net/../game/vehicle.h jni/net/../game/object.h \
+  jni/net/../game/camera.h jni/net/../game/font.h \
+  jni/net/../game/scripting.h jni/net/../game/radarcolors.h \
+  jni/net/../game/util.h jni/net/../game/textdraw.h \
+  jni/net/../game/sprite2d.h jni/net/../game/widget.h \
+  jni/net/../game/widgetmanager.h jni/net/../game/stream.h \
+  jni/net/../game/CHandlingDefault.h jni/net/../game/CActorPed.h \
+  jni/net/../game/CExtendedCarColors.h jni/net/../game/CWeaponsOutFit.h \
+  jni/net/../game/CRadarRect.h jni/net/../game/CAdjustableHudColors.h \
+  jni/net/../game/CAdjustableHudPosition.h \
+  jni/net/../game/CInfoBarText.h jni/net/../game/CAdjustableHudScale.h \
+  jni/net/../game/CFirstPersonCamera.h jni/net/../game/CSnow.h \
+  jni/net/../game/snapshothelper.h jni/net/netgame.h \
+  jni/net/../vendor/raknet/RakClientInterface.h \
+  jni/net/../vendor/raknet/NetworkTypes.h \
+  jni/net/../vendor/raknet/RakNetDefines.h \
+  jni/net/../vendor/raknet/Export.h \
+  jni/net/../vendor/raknet/PacketPriority.h \
+  jni/net/../vendor/raknet/RakPeerInterface.h \
+  jni/net/../vendor/raknet/BitStream.h \
+  jni/net/../vendor/raknet/RakNetStatistics.h \
+  jni/net/../vendor/raknet/RakNetworkFactory.h \
+  jni/net/../vendor/raknet/PacketEnumerations.h \
+  jni/net/../vendor/raknet/StringCompressor.h \
+  jni/net/../vendor/raknet/DS_Map.h \
+  jni/net/../vendor/raknet/DS_OrderedList.h \
+  jni/net/../vendor/raknet/DS_List.h jni/net/localplayer.h \
+  jni/net/remoteplayer.h jni/net/../vendor/raknet/rijndael.h \
+  jni/net/playerpool.h jni/net/vehiclepool.h jni/net/gangzonepool.h \
+  jni/net/objectpool.h jni/net/pickuppool.h jni/net/textlabelpool.h \
+  jni/net/textdrawpool.h jni/net/..//gui/ITouchListener.h \
   C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\mutex \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/streampool.h \
-  C:/Users/napas/Desktop/Apk/Libs/jni/net/CActorPool.h
+  jni/net/streampool.h jni/net/CActorPool.h
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../main.h:
+jni/net/../main.h:
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo:
 
@@ -147,192 +106,192 @@ C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordere
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/common.h:
+jni/game/RW/common.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/RenderWare.h:
+jni/game/RW/RenderWare.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/skeleton.h:
+jni/game/RW/skeleton.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rwcore.h:
+jni/game/RW/rwcore.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rwplcore.h:
+jni/game/RW/rwplcore.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/errcore.def:
+jni/game/RW/errcore.def:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/errcom.def:
+jni/game/RW/errcom.def:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpcriter.h:
+jni/game/RW/rpcriter.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rperror.h:
+jni/game/RW/rperror.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rphanim.h:
+jni/game/RW/rphanim.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpworld.h:
+jni/game/RW/rpworld.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtquat.h:
+jni/game/RW/rtquat.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtanim.h:
+jni/game/RW/rtanim.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpmatfx.h:
+jni/game/RW/rpmatfx.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpskin.h:
+jni/game/RW/rpskin.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpuvanim.h:
+jni/game/RW/rpuvanim.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtdict.h:
+jni/game/RW/rtdict.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor/obfuscate/str_obfuscate.hpp:
+jni/vendor/obfuscate/str_obfuscate.hpp:
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor/raknet/SAMP/samp_netencr.h:
+jni/vendor/raknet/SAMP/samp_netencr.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor/raknet/SAMP/SAMPRPC.h:
+jni/vendor/raknet/SAMP/SAMPRPC.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/util/util.h:
+jni/util/util.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/bass/bass.h:
+jni/vendor\audio/bass/bass.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/bass/bass_fx.h:
+jni/vendor\audio/bass/bass_fx.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/opus/opus.h:
+jni/vendor\audio/opus/opus.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/opus/opus_types.h:
+jni/vendor\audio/opus/opus_types.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/opus/opus_defines.h:
+jni/vendor\audio/opus/opus_defines.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex.h:
+jni/vendor\audio/speex/speex.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_bits.h:
+jni/vendor\audio/speex/speex_bits.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_types.h:
+jni/vendor\audio/speex/speex_types.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_config_types.h:
+jni/vendor\audio/speex/speex_config_types.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_echo.h:
+jni/vendor\audio/speex/speex_echo.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_preprocess.h:
+jni/vendor\audio/speex/speex_preprocess.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/game.h:
+jni/net/../game/game.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/rgba.h:
+jni/net/../game/rgba.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/aimstuff.h:
+jni/net/../game/aimstuff.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/pad.h:
+jni/net/../game/pad.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/quaternion.h:
+jni/net/../game/quaternion.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/entity.h:
+jni/net/../game/entity.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/playerped.h:
+jni/net/../game/playerped.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CRemoteData.h:
+jni/net/../game/CRemoteData.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CStats.h:
+jni/net/../game/CStats.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/vehicle.h:
+jni/net/../game/vehicle.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/object.h:
+jni/net/../game/object.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/camera.h:
+jni/net/../game/camera.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/font.h:
+jni/net/../game/font.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/scripting.h:
+jni/net/../game/scripting.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/radarcolors.h:
+jni/net/../game/radarcolors.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/util.h:
+jni/net/../game/util.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/textdraw.h:
+jni/net/../game/textdraw.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/sprite2d.h:
+jni/net/../game/sprite2d.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/widget.h:
+jni/net/../game/widget.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/widgetmanager.h:
+jni/net/../game/widgetmanager.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/stream.h:
+jni/net/../game/stream.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CHandlingDefault.h:
+jni/net/../game/CHandlingDefault.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CActorPed.h:
+jni/net/../game/CActorPed.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CExtendedCarColors.h:
+jni/net/../game/CExtendedCarColors.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CWeaponsOutFit.h:
+jni/net/../game/CWeaponsOutFit.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CRadarRect.h:
+jni/net/../game/CRadarRect.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CAdjustableHudColors.h:
+jni/net/../game/CAdjustableHudColors.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CAdjustableHudPosition.h:
+jni/net/../game/CAdjustableHudPosition.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CInfoBarText.h:
+jni/net/../game/CInfoBarText.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CAdjustableHudScale.h:
+jni/net/../game/CAdjustableHudScale.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CFirstPersonCamera.h:
+jni/net/../game/CFirstPersonCamera.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/CSnow.h:
+jni/net/../game/CSnow.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../game/snapshothelper.h:
+jni/net/../game/snapshothelper.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/netgame.h:
+jni/net/netgame.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakClientInterface.h:
+jni/net/../vendor/raknet/RakClientInterface.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/NetworkTypes.h:
+jni/net/../vendor/raknet/NetworkTypes.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakNetDefines.h:
+jni/net/../vendor/raknet/RakNetDefines.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/Export.h:
+jni/net/../vendor/raknet/Export.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/PacketPriority.h:
+jni/net/../vendor/raknet/PacketPriority.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakPeerInterface.h:
+jni/net/../vendor/raknet/RakPeerInterface.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/BitStream.h:
+jni/net/../vendor/raknet/BitStream.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakNetStatistics.h:
+jni/net/../vendor/raknet/RakNetStatistics.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/RakNetworkFactory.h:
+jni/net/../vendor/raknet/RakNetworkFactory.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/PacketEnumerations.h:
+jni/net/../vendor/raknet/PacketEnumerations.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/StringCompressor.h:
+jni/net/../vendor/raknet/StringCompressor.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/DS_Map.h:
+jni/net/../vendor/raknet/DS_Map.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/DS_OrderedList.h:
+jni/net/../vendor/raknet/DS_OrderedList.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/DS_List.h:
+jni/net/../vendor/raknet/DS_List.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/localplayer.h:
+jni/net/localplayer.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/remoteplayer.h:
+jni/net/remoteplayer.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/../vendor/raknet/rijndael.h:
+jni/net/../vendor/raknet/rijndael.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/playerpool.h:
+jni/net/playerpool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/vehiclepool.h:
+jni/net/vehiclepool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/gangzonepool.h:
+jni/net/gangzonepool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/objectpool.h:
+jni/net/objectpool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/pickuppool.h:
+jni/net/pickuppool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/textlabelpool.h:
+jni/net/textlabelpool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/textdrawpool.h:
+jni/net/textdrawpool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/..//gui/ITouchListener.h:
+jni/net/..//gui/ITouchListener.h:
 
 C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\mutex:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/streampool.h:
+jni/net/streampool.h:
 
-C:/Users/napas/Desktop/Apk/Libs/jni/net/CActorPool.h:
+jni/net/CActorPool.h:

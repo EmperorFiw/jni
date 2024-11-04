@@ -208,12 +208,7 @@ void ScrApplyPlayerAnimation(RPCParameters *rpcParams)
 		else if(pPlayerPool->GetSlotState(playerId))
 			pPlayerPed = pPlayerPool->GetAt(playerId)->GetPlayerPed();
 
-		//
-		if (strcmp(szAnimName, "null") == 0)
-		{
-			Log("Animation: %s, %s", szAnimLib, szAnimName);
-			//Log("Animation lib %s name is null", szAnimLib);
-		}
+		Log("Animation: %s, %s", szAnimLib, szAnimName);
 
 
 		if(pPlayerPed)
@@ -1006,11 +1001,11 @@ void ScrCreateObject(RPCParameters* rpcParams)
 	bsData.Read(byteMaterialsCount);
 
 	Log("id: %d model: %d x: %f y: %f z: %f", wObjectID, ModelID, vecPos.X, vecPos.Y, vecPos.Z);
-	if (!pGame->IsModelLoaded(ModelID) && !IsValidModel(ModelID))
+	/*if (!pGame->IsModelLoaded(ModelID) && !IsValidModel(ModelID))
 	{
 		Log("Model %d ไม่มีอยู่จริง", ModelID);
 		return;
-	}
+	}*/
     CObjectPool* pObjectPool = pNetGame->GetObjectPool();
     pObjectPool->New(wObjectID, ModelID, vecPos, vecRot, fDrawDistance);
 

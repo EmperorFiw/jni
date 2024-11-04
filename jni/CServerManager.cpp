@@ -11,8 +11,8 @@ extern CDialogWindow *pDialogWindow;
 		OBFUSCATE("{ff9729}[1]{ffffff} EMPEROR | Server: 02")
 	};
 	const CServerInstance::CServerInstanceEncrypted g_sEncryptedAddresses[MAX_SERVERS] = {
-		CServerInstance::create(OBFUSCATE("147.50.240.224"), 1, 20, 7777, false), // 1
-		CServerInstance::create(OBFUSCATE("147.50.240.224"), 1, 20, 7777, false), // 2
+		CServerInstance::create(OBFUSCATE("191.96.92.112"), 1, 20, 7777, false), // 1
+		CServerInstance::create(OBFUSCATE("191.96.92.112"), 1, 20, 7777, false), // 2
 
 	};
 #endif

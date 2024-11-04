@@ -413,7 +413,7 @@ void CGame::DisplayWidgets(bool bDisp)
 	else *(uint16_t*)(SA_ADDR(0x8B82A0 + 0x10C)) = 1;
 }
 
-// допилить
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void CGame::PlaySound(int iSound, float fX, float fY, float fZ)
 {
 	ScriptCommand(&play_sound, fX, fY, fZ, iSound);
