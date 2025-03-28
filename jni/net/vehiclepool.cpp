@@ -140,7 +140,7 @@ void CVehiclePool::Process()
 		}
 	}
 }
-#include "..//game/CCustomPlateManager.h"
+// #include "..//game/CCustomPlateManager.h"
 bool CVehiclePool::New(NEW_VEHICLE *pNewVehicle)
 {
 #ifdef _CDEBUG

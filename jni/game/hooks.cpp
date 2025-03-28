@@ -5,7 +5,7 @@
 #include "crosshair.h"
 #include "util.h"
 #include "CRenderTarget.h"
-#include "CCustomPlateManager.h"
+// #include "CCustomPlateManager.h"
 
 #include "../net/netgame.h"
 
@@ -38,7 +38,7 @@ extern "C" {
 #include "../CFPSFix.h"
 
 #include "../graphics/CRQ_Commands.h"
-#include "../graphics/CSkyBox.h"
+// #include "../graphics/CSkyBox.h"
 #include "materialtext.h"
 
 extern CChatWindow* pChatWindow;
@@ -789,7 +789,7 @@ void NvUtilInit_hook(void)
 {	
 	NvUtilInit();
 	unProtect(SA_ADDR(0x5D1608));
-	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/MIRACLE/";
+	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/LOSTMAN/";
 }
 
 
@@ -1176,11 +1176,11 @@ void CObject__Render_hook(ENTITY_TYPE* thiz)
 	// 004353FE + 1
 	// 004352C4 + 1
 
-	if (CSkyBox::GetSkyObject())
-	{
-		if (CSkyBox::GetSkyObject()->m_pEntity == thiz && !CSkyBox::IsNeedRender())
-			return;
-	}
+	// if (CSkyBox::GetSkyObject())
+	// {
+	// 	if (CSkyBox::GetSkyObject()->m_pEntity == thiz && !CSkyBox::IsNeedRender())
+	// 		return;
+	// }
 
 	uintptr_t dwRetAddr = 0;
 	__asm__ volatile ("mov %0, lr" : "=r" (dwRetAddr));
@@ -1612,20 +1612,20 @@ void* CCustomCarEnvMapPipeline__pluginEnvMatDestructorCB_hook(void* object, RwIn
 	return CCustomCarEnvMapPipeline__pluginEnvMatDestructorCB(object, offset, size);
 }
 
-static bool once = false;
+// static bool once = false;
 static bool g_bFirstPersonOnFootEnabled = false;
 void (*CGame__Process)();
 void CGame__Process_hook()
 {
 	CGame__Process();
 
-	if (!once)
-	{
-		CCustomPlateManager::Initialise();
-		//CBinder::Initialise();
-		// CSnow::Initialise();
-		once = true;
-	}
+	// if (!once)
+	// {
+	// 	// CCustomPlateManager::Initialise();
+	// 	//CBinder::Initialise();
+	// 	// CSnow::Initialise();
+	// 	once = true;
+	// }
 
 	/*if (pNetGame && pNetGame->GetPlayerPool() && pNetGame->GetPlayerPool()->GetLocalPlayer())
 		CSnow::Process(pNetGame->GetPlayerPool()->GetLocalPlayer()->GetPlayerPed(), pGame->GetActiveInterior());*/
@@ -1680,13 +1680,13 @@ void CGame__Process_hook()
 
 	//if (pAudioStream) pAudioStream->Process();
 
-	CCustomPlateManager::Process();
+	// CCustomPlateManager::Process();
 }
 
 void (*CRenderer__RenderEverythingBarRoads)();
 void CRenderer__RenderEverythingBarRoads_hook()
 {
-	CSkyBox::Process();
+	// CSkyBox::Process();
 
 	CRenderer__RenderEverythingBarRoads();
 }

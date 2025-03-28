@@ -130,7 +130,7 @@ uint32_t g_uiBorderedText = 1;
 #include "CDebugInfo.h"
 #include "CLocalisation.h"
 #include "scoreboard.h"
-#include "game/CCustomPlateManager.h"
+// #include "game/CCustomPlateManager.h"
 #include <fcntl.h>
 
 

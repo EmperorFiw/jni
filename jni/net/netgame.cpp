@@ -432,10 +432,10 @@ void CNetGame::Packet_TrailerSync(Packet* p)
 
 
 
-#include "../game/CCustomPlateManager.h"
+// #include "../game/CCustomPlateManager.h"
 #include "../util/CJavaWrapper.h"
 
-#include "../graphics/CSkyBox.h"
+// #include "../graphics/CSkyBox.h"
 
 void CNetGame::Packet_CustomRPC(Packet* p)
 {
@@ -519,7 +519,7 @@ void CNetGame::Packet_CustomRPC(Packet* p)
 			uint8_t speed;
 			bs.Read(speed);
 
-			CSkyBox::SetRotSpeed((float)speed / 1000.0f);
+			// CSkyBox::SetRotSpeed((float)speed / 1000.0f);
 			break;
 		}
 		
@@ -536,7 +536,7 @@ void CNetGame::Packet_CustomRPC(Packet* p)
 
 			bs.Read(&szText[0], bLen);
 			
-			CSkyBox::SetTexture(szText);
+			// CSkyBox::SetTexture(szText);
 			break;
 		}
 		
@@ -689,10 +689,10 @@ void CNetGame::Packet_CustomRPC(Packet* p)
 					pVeh->ApplyVinyls(bVinyls[0], bVinyls[1]);
 
 					//pChatWindow->AddDebugMessage("%d %d %d %d %d", bToner[0], bToner[1], bToner[2], bVinyls[0], bVinyls[1]);
-					if (bPlateType)
-					{
-						CCustomPlateManager::PushPlate(vehId, (uint32_t)bPlateType, szText, szRegion);
-					}
+					// if (bPlateType)
+					// {
+					// 	CCustomPlateManager::PushPlate(vehId, (uint32_t)bPlateType, szText, szRegion);
+					// }
 				}
 			}
 

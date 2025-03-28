@@ -2,7 +2,7 @@
 #include "game.h"
 #include "../chatwindow.h"
 #include "../util/armhook.h"
-#include "../graphics/CSkyBox.h"
+// #include "../graphics/CSkyBox.h"
 
 void ApplyPatches();
 void ApplyInGamePatches();
