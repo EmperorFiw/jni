@@ -1002,10 +1002,10 @@ void ScrCreateObject(RPCParameters* rpcParams)
 	uint8_t byteMaterialsCount = 0;
 	bsData.Read(byteMaterialsCount);
 
-	Log("id: %d model: %d x: %f y: %f z: %f", wObjectID, ModelID, vecPos.X, vecPos.Y, vecPos.Z);
+	// Log("id: %d model: %d x: %f y: %f z: %f", wObjectID, ModelID, vecPos.X, vecPos.Y, vecPos.Z);
 
 	CObjectPool* pObjectPool = pNetGame->GetObjectPool();
-	Log("trying loading %d", ModelID);
+	// Log("trying loading %d", ModelID);
 	
 	if (ModelID == INVALID_OBJECT_ID) {
 		Log("Invalid ModelID: %d. Using fallback model.", ModelID);

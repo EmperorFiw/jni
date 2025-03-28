@@ -148,7 +148,7 @@ void installJMPHook(uintptr_t addr, uintptr_t func)
 
 void installHook(uintptr_t addr, uintptr_t func, uintptr_t *orig)
 {
-	Log(OBFUSCATE("installHook: 0x%X -> 0x%X"), addr, func);
+	// Log(OBFUSCATE("installHook: 0x%X -> 0x%X"), addr, func);
 
     if(memlib_end < (memlib_start + 0x10) || mmap_end < (mmap_start + 0x20))
     {
