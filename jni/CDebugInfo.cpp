@@ -39,11 +39,18 @@ void CDebugInfo::Draw()
 	if (m_uiDrawDebug || m_uiDrawFPS)
 	{ 	
 		float* pFPS = (float*)(SA_ADDR(0x608E00));
-		snprintf(&szStr[0], 30, "%.1f", *pFPS);
-		pos = ImVec2(pGUI->ScaleX(10.0f), pGUI->ScaleY(10.0f));
-
+		snprintf(&szStr[0], 30, "FPS %.1f", *pFPS);
+		pos = ImVec2(pGUI->ScaleX(10.0f), pGUI->ScaleY(1110.0f - pGUI->GetFontSize()));
+		
 		pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &szStr[0]);
 	}
+
+	//aurthor
+	snprintf(&szStr[0], 30, "Emperor Dev");
+	pos = ImVec2(pGUI->ScaleX(10.0f), pGUI->ScaleY(10.0f));
+	pGUI->RenderText(pos, (ImU32)0x80808080, true, &szStr[0]);
+
+	//memory
 	uint32_t memUsed = *(uint32_t*)(g_libGTASA + 0x67067C) / (1024 * 1024);
 	uint32_t memAvailable = *(uint32_t*)(g_libGTASA + 0x5DE734) / (1024 * 1024);
 	snprintf(&szStr[0], 30, "Memory: %d/%d MB", memUsed, memAvailable, (float )((float)memUsed/(float)memAvailable));

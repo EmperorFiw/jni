@@ -471,7 +471,7 @@ void CGUI::Render()
 			}
 
 			ImGui::SameLine(0,12);
-			if (ImGui::Button("Settings", vecButSize))
+			if (ImGui::Button("SETTING", vecButSize))
 	        {
 				g_pJavaWrapper->ShowClientSettings();
 			}		

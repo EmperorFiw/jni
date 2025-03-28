@@ -2033,7 +2033,7 @@ float GetDistanceBetween3DPoints(VECTOR* f, VECTOR* s)
 
 const char* GetAnimByIdx(int idx)
 {
-	Log("GetAnim");
+	// Log("GetAnim");
 	if (idx < 0 || idx >= 1843)
 	{
 		return nullptr;
@@ -2044,7 +2044,7 @@ const char* GetAnimByIdx(int idx)
 
 int GetAnimIdxByName(const char* szName)
 {
-	Log("GetAnimName");
+	// Log("GetAnimName");
 	for (int i = 0; i < 1843; i++)
 	{
 		if (!strcasecmp(szName, g_szAnimBlockNames[i]))

@@ -92,8 +92,7 @@
   jni/game/../keyboard.h jni/keyboardhistory.h jni/game/../CSettings.h \
   jni/game/../nv_event.h jni/game/../crashlytics.h \
   jni/game/../str_obfuscator_no_template.hpp jni/game/../CFPSFix.h \
-  jni/game/../graphics/CRQ_Commands.h jni/game/materialtext.h \
-  jni/game/crashfixes.h
+  jni/game/../graphics/CRQ_Commands.h jni/game/materialtext.h
 
 jni/game/../main.h:
 
@@ -382,5 +381,3 @@ jni/game/../CFPSFix.h:
 jni/game/../graphics/CRQ_Commands.h:
 
 jni/game/materialtext.h:
-
-jni/game/crashfixes.h:

@@ -227,9 +227,9 @@ bool unique_library_handler(const char* library)
 
 void ProcessCheckForKeyboard()
 {
-	if (pSettings->GetReadOnly().iAndroidKeyboard)
-		pKeyBoard->EnableNewKeyboard();
-	else pKeyBoard->EnableOldKeyboard();
+	// if (pSettings->GetReadOnly().iAndroidKeyboard)
+	pKeyBoard->EnableNewKeyboard();
+	// else pKeyBoard->EnableOldKeyboard();
 }
 
 void InitInGame()

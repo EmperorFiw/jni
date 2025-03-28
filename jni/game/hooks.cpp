@@ -373,8 +373,7 @@ void InitialiseRenderWare_hook()
 
 	InitialiseRenderWare();
 
-	// InstallHookFixes();
-
+	// TextureDatabaseRuntime::Load()
 	(( void (*)(const char*, int, int))(SA_ADDR(0x1BF244 + 1)))("samp", 0, 5);
 	// (( void (*)(const char*, int, int))(SA_ADDR(0x1BF244 + 1)))("flin_gui", 0, 5);
 }
@@ -874,7 +873,7 @@ void InstallSpecialHooks()
 	// installJMPHook(SA_ADDR(0x3379F8), (uintptr_t) CVehicleModelInfo__CLinkedUpgradeList__AddUpgradeLink_HOOK);
 	// installJMPHook(SA_ADDR(0x337A14), (uintptr_t) CVehicleModelInfo__CLinkedUpgradeList__FindOtherUpgrade_HOOK);
 	// ---
-	InstallHookFixes();
+	// InstallHookFixes();
 }
 
 int(*RwFrameAddChild)(int, int);
