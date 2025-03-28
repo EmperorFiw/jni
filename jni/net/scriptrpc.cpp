@@ -976,7 +976,7 @@ void ScrCreateObject(RPCParameters* rpcParams)
     bsData.Read(wObjectID);
     bsData.Read(ModelID);
 
-    Log(OBFUSCATE("RPC_SCRCREATEOBJECT(%d) %d"), iTotalObjects, ModelID);
+    // Log(OBFUSCATE("RPC_SCRCREATEOBJECT(%d) %d"), iTotalObjects, ModelID);
 	if(wObjectID < 0 || wObjectID >= MAX_OBJECTS)
 		return;
 	
@@ -1767,9 +1767,9 @@ void ScrPlayAudioStream(RPCParameters* rpcParams)
 
     if(pAudioStream) pAudioStream->Play(szURL, X, Y, Z, fRadius, bUsePos);
 
-    if(pChatWindow) {
-        pChatWindow->AddInfoMessage("{FFFFFF}Audio Stream: %s", szURL);
-    }
+    // if(pChatWindow) {
+    //     pChatWindow->AddInfoMessage("{FFFFFF}Audio Stream: %s", szURL);
+    // }
 }
 
 void ScrStopAudioStream(RPCParameters* rpcParams)
