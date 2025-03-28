@@ -26,8 +26,12 @@ float subAngle(float a1, float a2)
 
 CObject::CObject(int iModel, float fPosX, float fPosY, float fPosZ, VECTOR vecRot, float fDrawDistance)
 {
-	if(!IsObjectInCdImage(iModel)) iModel = 18631;
-	
+	if(!IsObjectInCdImage(iModel)) 
+	{
+		Log("Object id %d not found", iModel);
+		iModel = 18631;
+	}
+
 	uint32_t dwRetID 	= 0;
 	m_pEntity 			= nullptr;
 	m_dwGTAId 			= 0;
