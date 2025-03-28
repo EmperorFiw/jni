@@ -99,6 +99,7 @@ stFile* (*NvFOpen)(const char*, const char*, int, int);
 stFile* NvFOpen_hook(const char* r0, const char* r1, int r2, int r3)
 {
 	char path[0xFF] = { 0 };
+	Log("%s%s", g_pszStorage, r1+12);
 	// ----------------------------
 	if(!strncmp(r1+12, OBFUSCATE("mainV1.scm"), 10))
 	{
@@ -395,7 +396,7 @@ void CLoadingScreen_DisplayPCScreen_hook()
 		RwRenderStateSet(rwRENDERSTATETEXTUREADDRESS, (void*)rwTEXTUREADDRESSCLAMP);
 		(( void (*)(bool))(SA_ADDR(0x198010 + 1)))(false); // emu_GammaSet()
 
-		 RenderSplashScreen();
+		RenderSplashScreen();
 
 		RwCameraEndUpdate(camera);
 		RwCameraShowRaster(camera, nullptr, 0);
@@ -818,7 +819,6 @@ void CVehicleModelInfo__CLinkedUpgradeList__AddUpgradeLink_HOOK(int result, shor
 
 void CVehicleModelInfo__CLinkedUpgradeList__FindOtherUpgrade_HOOK() { }
 
-void InstallHookFixes();
 void InstallSpecialHooks()
 {
 	WriteMemory(SA_ADDR(0x23BEDC), (uintptr_t)"\xF8\xB5", 2);
@@ -873,7 +873,6 @@ void InstallSpecialHooks()
 	// installJMPHook(SA_ADDR(0x3379F8), (uintptr_t) CVehicleModelInfo__CLinkedUpgradeList__AddUpgradeLink_HOOK);
 	// installJMPHook(SA_ADDR(0x337A14), (uintptr_t) CVehicleModelInfo__CLinkedUpgradeList__FindOtherUpgrade_HOOK);
 	// ---
-	// InstallHookFixes();
 }
 
 int(*RwFrameAddChild)(int, int);
@@ -1621,7 +1620,7 @@ void CGame__Process_hook()
 
 	// if (!once)
 	// {
-	// 	// CCustomPlateManager::Initialise();
+	// 	CCustomPlateManager::Initialise();
 	// 	//CBinder::Initialise();
 	// 	// CSnow::Initialise();
 	// 	once = true;
