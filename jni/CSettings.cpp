@@ -262,7 +262,7 @@ void CSettings::LoadSettings(const char* szNickName, int iChatLines)
 	m_Settings.last_server = ini_table_get_entry_as_int(config, OBFUSCATE("client"), OBFUSCATE("last_server"), -1);
 
 	m_Settings.iCutout = ini_table_get_entry_as_int(config, OBFUSCATE("gui"), OBFUSCATE("cutout"), 0);
-	m_Settings.iAndroidKeyboard = ini_table_get_entry_as_int(config, OBFUSCATE("gui"), OBFUSCATE("androidKeyboard"), 0);
+	m_Settings.iAndroidKeyboard = ini_table_get_entry_as_int(config, OBFUSCATE("gui"), OBFUSCATE("androidKeyboard"), 1);
 
 	m_Settings.iFPSCounter = ini_table_get_entry_as_int(config, OBFUSCATE("gui"), OBFUSCATE("fpscounter"), 1);
 	m_Settings.iOutfitGuns = ini_table_get_entry_as_int(config, OBFUSCATE("gui"), OBFUSCATE("outfit"), 1);
