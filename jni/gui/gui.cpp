@@ -301,8 +301,8 @@ void CGUI::Render()
 	if (pDialogWindow)
 		pDialogWindow->Render();
 
-	if(pExtraKeyBoard) 
-		pExtraKeyBoard->Render();
+	// if(pExtraKeyBoard) 
+	// 	pExtraKeyBoard->Render();
 	
 	if(pGame) CGUI::ShowSpeed();
 
@@ -452,11 +452,11 @@ void CGUI::Render()
 		}
 		
 		CPlayerPool* pPlayerPool = pNetGame->GetPlayerPool();
-		if (pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsInVehicle() && !pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsAPassenger())
-		{
-			if (ImGui::Button(OBFUSCATE("L. Ctrl"), vecButSize))
-			LocalPlayerKeys.bKeys[ePadKeys::KEY_ACTION] = true;
-		}
+		// if (pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsInVehicle() && !pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsAPassenger())
+		// {
+		// 	if (ImGui::Button(OBFUSCATE("L. Ctrl"), vecButSize))
+		// 	LocalPlayerKeys.bKeys[ePadKeys::KEY_ACTION] = true;
+		// }
 
 		ImGui::SameLine(0,12);
 
@@ -468,6 +468,12 @@ void CGUI::Render()
 	         	RakNet::BitStream bsClick;
 	         	bsClick.Write(0xFFFF);
 	         	pNetGame->GetRakClient()->RPC(&RPC_ClickTextDraw, &bsClick, HIGH_PRIORITY, RELIABLE_ORDERED, 0, false, UNASSIGNED_NETWORK_ID, nullptr);
+			}
+
+			ImGui::SameLine(0,12);
+			if (ImGui::Button("Settings", vecButSize))
+	        {
+				g_pJavaWrapper->ShowClientSettings();
 			}		
 
 			ImGui::SameLine(0,12);

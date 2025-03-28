@@ -26,14 +26,14 @@ public:
     static RwTexture* tPassiveIcon;
     static RwTexture* tActiveIcon;
     static RwTexture* tMutedIcon;
-    static RwTexture* BackpackIcon;
-    static RwTexture* DataIcon;
-    static RwTexture* GpsIcon;
-    static RwTexture* PhoneIcon;
-    static RwTexture* AnimationIcon;
-    static RwTexture* SettingIcon;
-    static RwTexture* UpIcon;
-    static RwTexture* DownIcon;
+    // static RwTexture* BackpackIcon;
+    // static RwTexture* DataIcon;
+    // static RwTexture* GpsIcon;
+    // static RwTexture* PhoneIcon;
+    // static RwTexture* AnimationIcon;
+    // static RwTexture* SettingIcon;
+    // static RwTexture* UpIcon;
+    // static RwTexture* DownIcon;
 
     static bool hasShowed;
 

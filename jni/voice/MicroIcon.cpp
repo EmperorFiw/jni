@@ -16,14 +16,14 @@ bool MicroIcon::Init() noexcept
         MicroIcon::tPassiveIcon = (RwTexture*)LoadTextureFromDB("samp", "micro_passive");
         MicroIcon::tActiveIcon = (RwTexture*)LoadTextureFromDB("samp", "micro_active");
         MicroIcon::tMutedIcon = (RwTexture*)LoadTextureFromDB("samp", "micro_passive");
-        MicroIcon::BackpackIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_backpack");
-        MicroIcon::DataIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_data");
-        MicroIcon::GpsIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_gps");
-        MicroIcon::PhoneIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_phone");
-        MicroIcon::AnimationIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_animation");
-        MicroIcon::SettingIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_setting");
-        MicroIcon::UpIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_up");
-        MicroIcon::DownIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_down");
+        // MicroIcon::BackpackIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_backpack");
+        // MicroIcon::DataIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_data");
+        // MicroIcon::GpsIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_gps");
+        // MicroIcon::PhoneIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_phone");
+        // MicroIcon::AnimationIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_animation");
+        // MicroIcon::SettingIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_setting");
+        // MicroIcon::UpIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_up");
+        // MicroIcon::DownIcon = (RwTexture*)LoadTextureFromDB("samp", "ic_down");
     }
     catch(const std::exception& exception)
     {
@@ -31,14 +31,14 @@ bool MicroIcon::Init() noexcept
         MicroIcon::tPassiveIcon = nullptr;
         MicroIcon::tActiveIcon = nullptr;
         MicroIcon::tMutedIcon = nullptr;
-        MicroIcon::BackpackIcon = nullptr;
-        MicroIcon::DataIcon = nullptr;
-        MicroIcon::GpsIcon = nullptr;
-        MicroIcon::PhoneIcon = nullptr;
-        MicroIcon::AnimationIcon = nullptr;
-        MicroIcon::SettingIcon = nullptr;
-        MicroIcon::UpIcon = nullptr;
-        MicroIcon::DownIcon = nullptr;
+        // MicroIcon::BackpackIcon = nullptr;
+        // MicroIcon::DataIcon = nullptr;
+        // MicroIcon::GpsIcon = nullptr;
+        // MicroIcon::PhoneIcon = nullptr;
+        // MicroIcon::AnimationIcon = nullptr;
+        // MicroIcon::SettingIcon = nullptr;
+        // MicroIcon::UpIcon = nullptr;
+        // MicroIcon::DownIcon = nullptr;
         return false;
     }
 
@@ -87,11 +87,11 @@ bool MicroIcon::hasShowed { false };
 RwTexture* MicroIcon::tPassiveIcon { nullptr };
 RwTexture* MicroIcon::tActiveIcon { nullptr };
 RwTexture* MicroIcon::tMutedIcon { nullptr };
-RwTexture* MicroIcon::BackpackIcon { nullptr };
-RwTexture* MicroIcon::DataIcon { nullptr };
-RwTexture* MicroIcon::GpsIcon { nullptr };
-RwTexture* MicroIcon::PhoneIcon { nullptr };
-RwTexture* MicroIcon::AnimationIcon { nullptr };
-RwTexture* MicroIcon::SettingIcon { nullptr };
-RwTexture* MicroIcon::UpIcon { nullptr };
-RwTexture* MicroIcon::DownIcon { nullptr };
+// RwTexture* MicroIcon::BackpackIcon { nullptr };
+// RwTexture* MicroIcon::DataIcon { nullptr };
+// RwTexture* MicroIcon::GpsIcon { nullptr };
+// RwTexture* MicroIcon::PhoneIcon { nullptr };
+// RwTexture* MicroIcon::AnimationIcon { nullptr };
+// RwTexture* MicroIcon::SettingIcon { nullptr };
+// RwTexture* MicroIcon::UpIcon { nullptr };
+// RwTexture* MicroIcon::DownIcon { nullptr };

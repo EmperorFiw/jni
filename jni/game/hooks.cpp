@@ -373,7 +373,8 @@ void InitialiseRenderWare_hook()
 
 	InitialiseRenderWare();
 
-	// TextureDatabaseRuntime::Load()
+	// InstallHookFixes();
+
 	(( void (*)(const char*, int, int))(SA_ADDR(0x1BF244 + 1)))("samp", 0, 5);
 	// (( void (*)(const char*, int, int))(SA_ADDR(0x1BF244 + 1)))("flin_gui", 0, 5);
 }
@@ -395,7 +396,7 @@ void CLoadingScreen_DisplayPCScreen_hook()
 		RwRenderStateSet(rwRENDERSTATETEXTUREADDRESS, (void*)rwTEXTUREADDRESSCLAMP);
 		(( void (*)(bool))(SA_ADDR(0x198010 + 1)))(false); // emu_GammaSet()
 
-		RenderSplashScreen();
+		 RenderSplashScreen();
 
 		RwCameraEndUpdate(camera);
 		RwCameraShowRaster(camera, nullptr, 0);

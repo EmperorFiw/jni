@@ -28,66 +28,66 @@ void CExtraKeyBoard::Show(bool bShow)
 	m_bIsActive = bShow;
 }
 
-void CExtraKeyBoard::Render() 
-{
-	bool bDontExpand = false;
-	if(pDialogWindow->m_bIsActive)
-		bDontExpand = true;
-	else if(pScoreBoard->m_bToggle)
-		bDontExpand = true;
+// void CExtraKeyBoard::Render() 
+// {
+// 	bool bDontExpand = false;
+// 	if(pDialogWindow->m_bIsActive)
+// 		bDontExpand = true;
+// 	else if(pScoreBoard->m_bToggle)
+// 		bDontExpand = true;
 
-	CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
-	if(pPlayerPed) 
-	{
-		ImGuiIO &io = ImGui::GetIO();
-		ImGui::PushStyleColor(ImGuiCol_Button, (ImVec4)ImColor(0x00, 0x00, 0x00, 0x00).Value);
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, (ImVec4)ImColor(0x00, 0x00, 0x00, 0x00).Value);
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, (ImVec4)ImColor(0x00, 0x00, 0x00, 0x00).Value);
+// 	CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
+// 	if(pPlayerPed) 
+// 	{
+// 		ImGuiIO &io = ImGui::GetIO();
+// 		ImGui::PushStyleColor(ImGuiCol_Button, (ImVec4)ImColor(0x00, 0x00, 0x00, 0x00).Value);
+//         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, (ImVec4)ImColor(0x00, 0x00, 0x00, 0x00).Value);
+//         ImGui::PushStyleColor(ImGuiCol_ButtonActive, (ImVec4)ImColor(0x00, 0x00, 0x00, 0x00).Value);
             
 
-		ImGui::Begin("Extrakeyboard", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings);
+// 		ImGui::Begin("Extrakeyboard", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings);
 	
 
-		if(!bDontExpand)
-		{
-			ImGui::SameLine(0, 15);
-			if (ImGui::ImageButton(!m_bIsExtraShow ? (ImTextureID)MicroIcon::DownIcon->raster : (ImTextureID)MicroIcon::UpIcon->raster, ImVec2(70,70)))
-			{
-				if (m_bIsExtraShow)
-					m_bIsExtraShow = false;
-				else m_bIsExtraShow = true;
-			}
-			if(!m_bIsExtraShow) 
-			{
-				ImGui::SameLine(0, 15);
-				if(ImGui::ImageButton((ImTextureID)MicroIcon::BackpackIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/apk1");
+// 		if(!bDontExpand)
+// 		{
+// 			ImGui::SameLine(0, 15);
+// 			if (ImGui::ImageButton(!m_bIsExtraShow ? (ImTextureID)MicroIcon::DownIcon->raster : (ImTextureID)MicroIcon::UpIcon->raster, ImVec2(70,70)))
+// 			{
+// 				if (m_bIsExtraShow)
+// 					m_bIsExtraShow = false;
+// 				else m_bIsExtraShow = true;
+// 			}
+// 			if(!m_bIsExtraShow) 
+// 			{
+// 				ImGui::SameLine(0, 15);
+// 				if(ImGui::ImageButton((ImTextureID)MicroIcon::BackpackIcon->raster, ImVec2(70,70)))
+// 					pNetGame->SendChatCommand("/apk1");
 				
-				ImGui::SameLine(0, 15);
-				if(ImGui::ImageButton((ImTextureID)MicroIcon::DataIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/stats");
+// 				ImGui::SameLine(0, 15);
+// 				if(ImGui::ImageButton((ImTextureID)MicroIcon::DataIcon->raster, ImVec2(70,70)))
+// 					pNetGame->SendChatCommand("/stats");
 				
-				ImGui::SameLine(0, 15);
-				if(ImGui::ImageButton((ImTextureID)MicroIcon::GpsIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/gps");
+// 				ImGui::SameLine(0, 15);
+// 				if(ImGui::ImageButton((ImTextureID)MicroIcon::GpsIcon->raster, ImVec2(70,70)))
+// 					pNetGame->SendChatCommand("/gps");
 					
-				ImGui::SameLine(0, 15);
-				if(ImGui::ImageButton((ImTextureID)MicroIcon::PhoneIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/phone");
+// 				ImGui::SameLine(0, 15);
+// 				if(ImGui::ImageButton((ImTextureID)MicroIcon::PhoneIcon->raster, ImVec2(70,70)))
+// 					pNetGame->SendChatCommand("/phone");
 
-				ImGui::SameLine(0, 15);
-				if(ImGui::ImageButton((ImTextureID)MicroIcon::AnimationIcon->raster, ImVec2(70,70)))
-					pNetGame->SendChatCommand("/apk5");
+// 				ImGui::SameLine(0, 15);
+// 				if(ImGui::ImageButton((ImTextureID)MicroIcon::AnimationIcon->raster, ImVec2(70,70)))
+// 					pNetGame->SendChatCommand("/apk5");
 
-				ImGui::SameLine(0, 15);
-				if(ImGui::ImageButton((ImTextureID)MicroIcon::SettingIcon->raster, ImVec2(70,70)))
-					g_pJavaWrapper->ShowClientSettings();
-			}
+// 				ImGui::SameLine(0, 15);
+// 				if(ImGui::ImageButton((ImTextureID)MicroIcon::SettingIcon->raster, ImVec2(70,70)))
+// 					g_pJavaWrapper->ShowClientSettings();
+// 			}
 			
-		}
-		ImGui::SetWindowPos(ImVec2(pGUI->ScaleX(520), pGUI->ScaleY(930)));
-		ImGui::End();
-		ImGui::PopStyleColor(3);
-	}
-	return;
-}
+// 		}
+// 		ImGui::SetWindowPos(ImVec2(pGUI->ScaleX(520), pGUI->ScaleY(930)));
+// 		ImGui::End();
+// 		ImGui::PopStyleColor(3);
+// 	}
+// 	return;
+// }

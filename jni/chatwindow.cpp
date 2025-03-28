@@ -151,12 +151,6 @@ bool ProcessCommands(const char* str)
 		g_pJavaWrapper->ShowClientSettings();
 		return true;
 	}
-
-	if (strstr(str, "/testdrink")) {
-		LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE] = true;
-		pChatWindow->AddInfoMessage(OBFUSCATE("Client: Yse drink"));
-		return true;
-	}
 	return false;
 }
 

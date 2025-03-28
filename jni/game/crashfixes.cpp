@@ -5,6 +5,7 @@
 #include "util.h"
 
 #include "../util/armhook.h"
+#include "crashfixes.h"
 
 int (*SetCompAlphaCB)(int a1, char a2);
 int SetCompAlphaCB_hook(int a1, char a2)
@@ -139,7 +140,7 @@ int CAEVehicleAudioEntity__GetAccelAndBrake_hook(int a1, int a2)
 	return CAEVehicleAudioEntity__GetAccelAndBrake(a1, a2);
 }
 
-void InstallHookFixes()
+void CrashFixes::InstallHookCTexture()
 {
 	installHook(SA_ADDR(0x1BA580), (uintptr_t)HOOK__RwResourcesFreeResEntry, (uintptr_t*)&_RwResourcesFreeResEntry);
 	installHook(SA_ADDR(0x1E3C54), (uintptr_t)HOOK__RpMaterialDestroy, (uintptr_t*)&_RpMaterialDestroy);
