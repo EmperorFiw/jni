@@ -67,7 +67,7 @@ void CExtraKeyBoard::Render()
 				if(ImGui::ImageButton((ImTextureID)MicroIcon::DataIcon->raster, ImVec2(70,70)))
 					pNetGame->SendChatCommand("/stats");
 				
-				ImGui::SameLine(0, 15);//ปุ่มALT เกี่ยวกับรถ
+				ImGui::SameLine(0, 15);
 				if(ImGui::ImageButton((ImTextureID)MicroIcon::GpsIcon->raster, ImVec2(70,70)))
 					pNetGame->SendChatCommand("/gps");
 					

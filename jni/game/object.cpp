@@ -26,11 +26,12 @@ float subAngle(float a1, float a2)
 
 CObject::CObject(int iModel, float fPosX, float fPosY, float fPosZ, VECTOR vecRot, float fDrawDistance)
 {
+	if(!util::IsObjectInCdImage(iModel)) iModel = 18631;
 	uint32_t dwRetID 	= 0;
 	m_pEntity 			= nullptr;
 	m_dwGTAId 			= 0;
 	m_ObjectModel		= iModel;
-
+	
 	ScriptCommand(&create_object, iModel, fPosX, fPosY, fPosZ, &dwRetID);
 	ScriptCommand(&put_object_at, dwRetID, fPosX, fPosY, fPosZ);
 

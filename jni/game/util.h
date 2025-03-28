@@ -65,6 +65,7 @@ int Weapon_FireSniper(WEAPON_SLOT_TYPE* pWeaponSlot, PED_TYPE* pPed);
 bool IsGameEntityArePlaceable(ENTITY_TYPE* pEntity);
 bool IsValidGameEntity(ENTITY_TYPE* pEntity);
 bool IsValidGamePed(PED_TYPE* pPed);
+bool IsObjectInCdImage(int ModelID);
 
 float FixAngle(float angle);
 

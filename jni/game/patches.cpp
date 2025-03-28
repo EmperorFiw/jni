@@ -81,16 +81,8 @@ void ApplyPatches_level0()
 	memset(PLAYERS_REALLOC, 0, 404 * 257);
 	unProtect(g_libGTASA + 0x5D021C);
 	*(char**)(g_libGTASA + 0x5D021C) = PLAYERS_REALLOC;
-
-	// 3 touch begin
-	/*unProtect(g_libGTASA + 0x005D1E8C);
-	memset(test_pointsArray, 0, 999 * sizeof(int));
-	*(int**)(g_libGTASA + 0x005D1E8C) = &test_pointsArray[0];
-
-	unProtect(g_libGTASA + 0x0063D4F0);
-	memset(test_pointersLibArray, 0, 999 * sizeof(int));
-	*(int**)(g_libGTASA + 0x0063D4F0) = &test_pointersLibArray[0];*/
 	
+	// 3 touch begin
 	unProtect(g_libGTASA + 0x5D1E8C);
   	*(uintptr_t*)(g_libGTASA + 0x5D1E8C) = (uintptr_t)test_pointsArray;
 	
@@ -100,17 +92,14 @@ void ApplyPatches_level0()
 	WriteMemory(g_libGTASA + 0x00238232, (uintptr_t)"\x03\x20", 2);
 	WriteMemory(g_libGTASA + 0x0025C522, (uintptr_t)"\x02\x2C", 2);
 	// 3 touch end
-
 	// col links limits!!!
 	WriteMemory(g_libGTASA + 0x1859FC, (uintptr_t)"\x01\x22", 2);
 	//sizeof(CCollisionLink) = 12 (0xC)
 	// we need 200 col links(MALO LI!!!)
-
 	WriteMemory(g_libGTASA + 0x0029554A, (uintptr_t)"\x4f\xf4\x61\x60", 4); // allocate memory to 300 * sizeof(CCollisionLink)
 	WriteMemory(g_libGTASA + 0x00295556, (uintptr_t)"\x4f\xf4\x5b\x62", 4); // BUT MAKE INITIALIZED ONLY 292 DUE TO SHIT ARM ASM!! (292 * sizeof(CCollisionLink)
 
 	// col links limits end
-
 	CExtendedCarColors::ApplyPatches_level0();
 
 	uint8_t fps = 90;
@@ -123,11 +112,6 @@ void ApplyPatches_level0()
 	WriteMemory(g_libGTASA + 0x56C126, (uintptr_t)& fps, 1);
 	WriteMemory(g_libGTASA + 0x95B074, (uintptr_t)& fps, 1);
 	WriteMemory(g_libGTASA + 0x56C1A2, (uintptr_t)& fps, 1);
-
-	//unProtect(g_libGTASA + 0x0056CA68);
-	//*(uint8_t*)(g_libGTASA + 0x0056CA68) = 1;
-
-	//makeNOP(g_libGTASA + 0x001A869C, 2);
 
 	// nop random pickups
 	makeNOP(g_libGTASA + 0x00402472, 2);
@@ -154,10 +138,6 @@ void ApplyPatches_level0()
 	WriteMemory(g_libGTASA + 0x00336618, (uintptr_t)"\x4F\xF4\x6A\x71", 4);
 	WriteMemory(g_libGTASA + 0x33661C, (uintptr_t)"\x1A\x4B", 2);
 	WriteMemory(g_libGTASA + 0x00274AB4, (uintptr_t)"\x00\x46", 2);
-
-	//WriteMemory(g_libGTASA + 0x001A7EB6, (uintptr_t)"\x00\x23", 2); // MOVS            R3, #0
-	//WriteMemory(g_libGTASA + 0x001A7ED2, (uintptr_t)"\x00\x20", 2); // MOVS				R0, #0
-
 	WriteUnVerified0();
 }
 

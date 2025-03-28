@@ -211,8 +211,10 @@ void ScrApplyPlayerAnimation(RPCParameters *rpcParams)
 		Log("Animation: %s, %s", szAnimLib, szAnimName);
 
 
-		if(pPlayerPed)
+		if(pPlayerPed && (szAnimLib != nullptr && szAnimName != nullptr))
 			pPlayerPed->ApplyAnimation(szAnimName, szAnimLib, fS, (int)opt1, (int)opt2, (int)opt3, (int)opt4, (int)opt5);
+		else
+			Log("Continue Bad Animation");
 	}
 }
 
@@ -1001,13 +1003,16 @@ void ScrCreateObject(RPCParameters* rpcParams)
 	bsData.Read(byteMaterialsCount);
 
 	Log("id: %d model: %d x: %f y: %f z: %f", wObjectID, ModelID, vecPos.X, vecPos.Y, vecPos.Z);
-	/*if (!pGame->IsModelLoaded(ModelID) && !IsValidModel(ModelID))
-	{
-		Log("Model %d ไม่มีอยู่จริง", ModelID);
-		return;
-	}*/
-    CObjectPool* pObjectPool = pNetGame->GetObjectPool();
-    pObjectPool->New(wObjectID, ModelID, vecPos, vecRot, fDrawDistance);
+
+	CObjectPool* pObjectPool = pNetGame->GetObjectPool();
+	Log("trying loading %d", ModelID);
+	
+	if (ModelID == INVALID_OBJECT_ID) {
+		Log("Invalid ModelID: %d. Using fallback model.", ModelID);
+		pObjectPool->New(wObjectID, 18631, vecPos, vecRot, fDrawDistance);
+	} else {
+		pObjectPool->New(wObjectID, ModelID, vecPos, vecRot, fDrawDistance);
+	}
 
     CObject *pObject = pNetGame->GetObjectPool()->GetAt(wObjectID);
     if (pObject && attachedVehicleID != INVALID_VEHICLE_ID)

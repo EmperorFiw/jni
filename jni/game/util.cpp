@@ -2620,3 +2620,8 @@ float GetDistanceFromVectorToVector(VECTOR* vecFrom, VECTOR* vecTo) {
 
 	return (float)sqrt(fX + fY + fZ);
 }
+
+bool util::IsObjectInCdImage(int ModelID)
+{
+    return CallFunction<bool>(g_libGTASA + 0x28EAE8 + 1, ModelID);
+}

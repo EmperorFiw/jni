@@ -167,12 +167,6 @@ void CNetGame::Process()
 	bool bProcess = false;
 	UpdateNetwork();
 	bProcess = true;
-	/*if (GetTickCount() - time >= 1000 / 30)
-	{
-		UpdateNetwork();
-		time = GetTickCount();
-		bProcess = true;
-	}*/
 
 	// server checkpoints update
 	if (m_pPlayerPool)
@@ -233,7 +227,8 @@ void CNetGame::Process()
 		}
 	}
 
-	if(GetGameState() == GAMESTATE_WAIT_CONNECT && (GetTickCount() - m_dwLastConnectAttempt) > 3000)
+	if(GetGameState() == GAMESTATE_WAIT_CONNECT && 
+		(GetTickCount() - m_dwLastConnectAttempt) > 3000)
 	{
 		/*if (CClientInfo::bSAMPModified)
 		{
@@ -269,6 +264,7 @@ void CNetGame::UpdateNetwork()
 	while(pkt = m_pRakClient->Receive())
 	{
 		packetIdentifier = GetPacketID(pkt);
+		//Log(OBFUSCATE("Incoming code: %d"), packetIdentifier);
 		switch(packetIdentifier)
 		{
 			case ID_AUTH_KEY:

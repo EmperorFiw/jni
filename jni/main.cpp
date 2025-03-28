@@ -127,15 +127,21 @@ extern "C"
 
 void InitSAMP(JNIEnv* pEnv, jobject thiz)
 {
+	Log(OBFUSCATE("Initializing SAMP.."));
 	PROTECT_CODE_INITSAMP;
 
 	Log(OBFUSCATE("Initializing SAMP.."));
-
+	if ( !*(uintptr_t *)(g_libGTASA + 0x61B298) && !((int (*)(const char *))(g_libGTASA + 0x179A20))("glAlphaFuncQCOM") )
+  	{
+		Log("Make NOP Init");
+    	makeNOP(g_libGTASA + 0x1A6164, 4);
+    	WriteMemory(SA_ADDR(0x1A6164), (uintptr_t)"\x70\x47", 2);
+  	}
 	InitBASSFuncs();
 	
 	//BASS_Init(-1, 44100, BASS_DEVICE_3D, 0, nullptr); // ������������� ��������� ������
 
-	g_pszStorage = "/storage/emulated/0/Android/Faren GAME/";
+	g_pszStorage = "/storage/emulated/0/Android/MIRACLE/";
 
 	if(!g_pszStorage)
 	{
@@ -449,6 +455,7 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved)
 {
 	javaVM = vm;
 
+	Log(OBFUSCATE("SAMP library loading!"));
 	Log(OBFUSCATE("SAMP library loaded! Build time: " __DATE__ " " __TIME__));
 
 	g_libGTASA = FindLibrary(OBFUSCATE("libGTASA.so"));
