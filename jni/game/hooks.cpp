@@ -3025,6 +3025,39 @@ uint32_t CCollision__ProcessVerticalLine_hook(float *colLine, float *transform, 
 	return 0;
 }
 
+int (*CAnimManager_GetAnimation)(int a1, int a2);
+int CAnimManager_GetAnimation_hook(int a1, int a2)
+{
+    int v2;
+    int result;
+    int v5;
+
+    if (!a1) 
+        return 0;
+
+    v2 = *(uint32_t *)(a2 + 24);
+    if (v2 < 1)
+        return 0;
+
+    result = CAnimManager_GetAnimation(a1, a2);
+
+    //ไม่ต้องเปิด
+    // if (result != a1)
+    // {
+    //     while (1)
+    //     {
+    //         ++v5;
+    //         result += 6;
+    //         if (v5 == v2)
+    //             break;
+    //         if (result == a1)
+    //             return result;
+    //     }
+    // }
+    
+    return result;
+}
+
 void InstallHooks()
 {
 	PROTECT_CODE_INSTALLHOOKS;
@@ -3173,6 +3206,7 @@ void InstallHooks()
 	// camera collisions processing
 	//installHook(SA_ADDR(0x29CBB0), (uintptr_t) CCollision__BuildCacheCameraCollision_hook, (uintptr_t *) &CCollision__BuildCacheCameraCollision);
 	//installHook(SA_ADDR(0x29C924), (uintptr_t) CCollision__CameraCollisionVehicles_hook, (uintptr_t *) &CCollision__CameraCollisionVehicles);
-
+	installHook(SA_ADDR(0x33DC1C), (uintptr_t) CAnimManager_GetAnimation_hook, (uintptr_t *) &CAnimManager_GetAnimation);
+	
 	HookCPad();
 }
