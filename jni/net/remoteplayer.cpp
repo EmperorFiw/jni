@@ -1136,9 +1136,28 @@ void CRemotePlayer::HideGlobalMarker()
 	}
 }
 
-void CRemotePlayer::StateChange(uint8_t byteNewState, uint8_t byteOldState)
+void CRemotePlayer::StateChange(BYTE byteNewState, BYTE byteOldState)
 {
+    if(byteNewState == PLAYER_STATE_DRIVER && byteOldState == PLAYER_STATE_ONFOOT)
+    {
+        // If their new vehicle is the one the local player
+        // is driving, we'll have to kick the local player out
+        CPlayerPed *pLocalPlayerPed = pGame->FindPlayerPed();
+        VEHICLEID LocalVehicle=0xFFFF;
+        RwMatrix mat;
 
+        if(pLocalPlayerPed && pLocalPlayerPed->IsInVehicle() && !pLocalPlayerPed->IsAPassenger())
+        {
+            LocalVehicle = pNetGame->GetVehiclePool()->FindIDFromGtaPtr(
+                    pLocalPlayerPed->GetGtaVehicle());
+            if(LocalVehicle == m_VehicleID) {
+				PMATRIX4X4 pMat = (PMATRIX4X4)&mat;
+				pLocalPlayerPed->GetMatrix(pMat);
+                pLocalPlayerPed->RemoveFromVehicleAndPutAt(mat.pos.x,mat.pos.y,mat.pos.z + 1.0f);
+                pGame->DisplayGameText("~r~Car Jacked~w~!",1000,5);
+            }
+        }
+    }
 }
 
 bool CRemotePlayer::SurfingOnVehicle()
