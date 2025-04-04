@@ -3191,7 +3191,7 @@ void InstallHooks()
 	installHook(SA_ADDR(0x398334), (uintptr_t) CGame__Shutdown_hook, (uintptr_t *) &CGame__Shutdown);
 
 	WriteMemory(SA_ADDR(0x3DA86C), (uintptr_t)"\x80\xB4\x00\xAF\x1B\x4B\x7B\x44\x1B\x68", 10);
-	WriteMemory(g_libGTASA + 0x2F81BC, (uintptr_t)"\x95\xF8\x81\x48", 4); // = 1157
+	// WriteMemory(g_libGTASA + 0x2F81BC, (uintptr_t)"\x95\xF8\x81\x48", 4); // = 1157
 
 	makeNOP(SA_ADDR(0x3DA876), 3);
 

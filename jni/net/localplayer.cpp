@@ -338,6 +338,7 @@ bool CLocalPlayer::Process()
 
 			if((dwThisTick - m_dwLastSendTick) > (unsigned int)GetOptimumOnFootSendRate() || LocalPlayerKeys.bKeys[ePadKeys::KEY_YES] || LocalPlayerKeys.bKeys[ePadKeys::KEY_NO] || LocalPlayerKeys.bKeys[ePadKeys::KEY_CTRL_BACK])
 			{
+				// pChatWindow->AddDebugMessage("%u", GetOptimumOnFootSendRate());
 				m_dwLastSendTick = GetTickCount();
 				SendOnFootFullSyncData();
 			}

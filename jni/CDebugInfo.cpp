@@ -7,6 +7,7 @@
 #include "game/RW/RenderWare.h"
 #include "chatwindow.h"
 #include "playertags.h"
+// #include "net/localplayer.h"
 #include "dialog.h"
 #include "keyboard.h"
 #include "CSettings.h"
@@ -14,6 +15,9 @@
 
 extern CGUI* pGUI;
 extern CChatWindow* pChatWindow;
+// extern CGame* pGame;
+// extern CNetGame* pNetGame;
+
 
 uint32_t CDebugInfo::uiStreamedPeds = 0;
 uint32_t CDebugInfo::uiStreamedVehicles = 0;
@@ -21,6 +25,10 @@ uint32_t CDebugInfo::m_uiDrawDebug = 0;
 uint32_t CDebugInfo::m_uiDrawFPS = 0;
 uint32_t CDebugInfo::m_dwSpeedMode = 0;
 uint32_t CDebugInfo::m_dwSpeedStart = 0;
+
+// CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
+// CPlayerPool *pPlayerPool = pNetGame->GetPlayerPool();
+// CLocalPlayer *pLocalPlayer = pPlayerPool->GetLocalPlayer();
 
 void CDebugInfo::ToggleDebugDraw()
 {
@@ -34,6 +42,7 @@ void CDebugInfo::SetDrawFPS(uint32_t bDraw)
 
 void CDebugInfo::Draw()
 {
+	
 	char szStr[30];
 	ImVec2 pos;
 	if (m_uiDrawDebug || m_uiDrawFPS)
@@ -44,7 +53,20 @@ void CDebugInfo::Draw()
 		pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &szStr[0]);
 	
 	}
+	// if(pPlayerPed) 
+	// {
+	// 	if(!pPlayerPed->IsInVehicle()) {
+	// 		sprintf(szStr,"OnFoot Send Rate: %u\n", pLocalPlayer->GetOptimumOnFootSendRate());
+	// 		pos = ImVec2(pGUI->ScaleX(10.0f), pGUI->ScaleY(605.0f - pGUI->GetFontSize()));
 
+	// 		pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &szStr[0]);
+	// 	} else {
+	// 		sprintf(szStr,"InCar Send Rate: %u\n", pLocalPlayer->GetOptimumInCarSendRate());
+	// 		pos = ImVec2(pGUI->ScaleX(10.0f), pGUI->ScaleY(605.0f - pGUI->GetFontSize()));
+
+	// 		pGUI->RenderText(pos, (ImU32)0xFFFFFFFF, true, &szStr[0]);
+	// 	}
+	// }
 	//aurthor
 	// snprintf(&szStr[0], 30, "Emperor Dev");
 	// pos = ImVec2(pGUI->ScaleX(10.0f), pGUI->ScaleY(10.0f));
