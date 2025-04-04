@@ -480,7 +480,8 @@ void CPlayerPed::SetCameraExtendedZoom(float fZoom)
 
 void CPlayerPed::SetDead()
 {
-	
+	// fix del cam shake
+	unProtect(g_libGTASA + 0x55EFB8);
 	if (!m_dwGTAId || !m_pPed)
 	{
 		return;

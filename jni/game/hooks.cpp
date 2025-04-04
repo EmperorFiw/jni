@@ -99,7 +99,8 @@ stFile* (*NvFOpen)(const char*, const char*, int, int);
 stFile* NvFOpen_hook(const char* r0, const char* r1, int r2, int r3)
 {
 	char path[0xFF] = { 0 };
-	Log("%s%s", g_pszStorage, r1+12);
+	//nvopen
+	// Log("%s%s", g_pszStorage, r1+12);
 	// ----------------------------
 	if(!strncmp(r1+12, OBFUSCATE("mainV1.scm"), 10))
 	{
@@ -790,7 +791,7 @@ void NvUtilInit_hook(void)
 {	
 	NvUtilInit();
 	unProtect(SA_ADDR(0x5D1608));
-	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/LOSTMAN/";
+	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/muangprai.com/";
 }
 
 
@@ -801,7 +802,33 @@ void ANDRunThread_hook(void* a1)
 
 	ANDRunThread(a1);
 }
+typedef struct _CLUMP_MODEL
+{
+	uintptr_t 	vtable;
+	uint8_t		data[88];
+} CLUMP_MODEL; 
 
+CLUMP_MODEL ClumpsModels[100]; 
+int ClumpsModelsCount = 0;
+
+CLUMP_MODEL* (*CClumpModelInfo_AddClumpModel)(int index);
+CLUMP_MODEL* CClumpModelInfo_AddClumpModel_hook(int index)
+{
+    CLUMP_MODEL* pInfo = &ClumpsModels[ClumpsModelsCount];
+
+    new (pInfo) CLUMP_MODEL();
+
+	reinterpret_cast<void(*)(CLUMP_MODEL*)>(SA_ADDR(0x33559C + 1))(pInfo);
+
+    pInfo->vtable = reinterpret_cast<uintptr_t>(SA_ADDR(0x5C6D50));
+
+	reinterpret_cast<void(*)(CLUMP_MODEL*)>(*(reinterpret_cast<uintptr_t**>(pInfo->vtable + 0x1C)))(pInfo);
+
+    *reinterpret_cast<CLUMP_MODEL**>(SA_ADDR(0x87BF48 + (index * 4))) = pInfo;
+
+    ClumpsModelsCount++;
+    return pInfo;
+}
 void CVehicleModelInfo__CLinkedUpgradeList__AddUpgradeLink_HOOK(int result, short int a2, short int a3)
 {
 	auto v1 = *(uint32_t *)(result + 400);
@@ -840,6 +867,9 @@ void InstallSpecialHooks()
 
 	installHook(SA_ADDR(0x25E660), (uintptr_t) MainMenuScreen__Update_hook, (uintptr_t *) &MainMenuScreen__Update);
 	installHook(SA_ADDR(0x23BB84), (uintptr_t) OS_FileOpen_hook, (uintptr_t *) &OS_FileOpen);
+
+	//new hooks
+	installHook(SA_ADDR(0x3365D4), (uintptr_t) CClumpModelInfo_AddClumpModel_hook, (uintptr_t *) &CClumpModelInfo_AddClumpModel);
 
 	// -- Huawei (Y7) crash fix
 	if (!*(uintptr_t*)(SA_ADDR(0x61B298)))
