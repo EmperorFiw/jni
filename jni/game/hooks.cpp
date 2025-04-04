@@ -3058,6 +3058,36 @@ int CAnimManager_GetAnimation_hook(int a1, int a2)
     return result;
 }
 
+//Fix AnimDooroffset Crash By Artiwliz
+int (*CTaskSimpleHoldEntity)(int a1, int a2, uintptr_t *a3, char a4, char a5, int a6, int a7, char a8);
+int CTaskSimpleHoldEntity_hook(int a1, int a2, uintptr_t *a3, char a4, char a5, int a6, int a7, char a8)
+{
+    uintptr_t v12;
+
+    *(uint8_t *)(a1 + 25) = a5;
+    *(uint8_t *)(a1 + 24) = a4;
+    *(uint32_t *)(a1 + 32) = a6;
+    *(uint32_t *)(a1 + 36) = a7;
+    *(uint32_t *)(a1 + 52) = 0x100;
+    *(uint8_t *)(a1 + 54) = a8;
+    *(uint32_t *)(a1 + 8) = a2;
+
+    if (a3)
+    {
+        v12 = *a3;
+        *(uint32_t *)(a1 + 20) = *((uintptr_t *)a3 + 2);
+        *(uintptr_t *)(a1 + 12) = v12;
+    }
+
+    if (a2)
+    {
+        *(uint32_t *)(a2 + 28) |= '\x20';
+        ((CEntity(*) (uint32_t, uint32_t))(SA_ADDR(0x40E820 + 1)))(a1 + 8, a1 + 8);
+    }
+
+    return a1;
+}
+
 void InstallHooks()
 {
 	PROTECT_CODE_INSTALLHOOKS;
@@ -3207,6 +3237,7 @@ void InstallHooks()
 	//installHook(SA_ADDR(0x29CBB0), (uintptr_t) CCollision__BuildCacheCameraCollision_hook, (uintptr_t *) &CCollision__BuildCacheCameraCollision);
 	//installHook(SA_ADDR(0x29C924), (uintptr_t) CCollision__CameraCollisionVehicles_hook, (uintptr_t *) &CCollision__CameraCollisionVehicles);
 	installHook(SA_ADDR(0x33DC1C), (uintptr_t) CAnimManager_GetAnimation_hook, (uintptr_t *) &CAnimManager_GetAnimation);
-	
+	installHook(SA_ADDR(0x4C87B0), (uintptr_t) CTaskSimpleHoldEntity_hook, (uintptr_t *) &CTaskSimpleHoldEntity); //FixCrash 
+
 	HookCPad();
 }
