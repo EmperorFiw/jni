@@ -791,7 +791,7 @@ void NvUtilInit_hook(void)
 {	
 	NvUtilInit();
 	unProtect(SA_ADDR(0x5D1608));
-	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/muangprai.com/";
+	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/LOSTMAN/";
 }
 
 
