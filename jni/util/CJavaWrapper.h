@@ -46,8 +46,6 @@ class CJavaWrapper
 	
 	jmethodID s_showMenu;
 	
-
-	
 	
 public:
 	JNIEnv* GetEnv();

@@ -4,22 +4,22 @@ C:/Users/napas/Desktop/Apk/Libs/obj/local/armeabi-v7a/objs/samp/gui/CFontRendere
   C:/Users/napas/Desktop/Apk/Libs/jni/gui/CFontInstance.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/gui/..//vendor/imgui/stb_truetype.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/gui/../main.h \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\sstream \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdarg \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\sstream \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdarg \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert \
   C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/common.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/RenderWare.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/skeleton.h \
@@ -38,7 +38,7 @@ C:/Users/napas/Desktop/Apk/Libs/obj/local/armeabi-v7a/objs/samp/gui/CFontRendere
   C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rpuvanim.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtdict.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/vendor/obfuscate/str_obfuscate.hpp \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef \
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef \
   C:/Users/napas/Desktop/Apk/Libs/jni/vendor/raknet/SAMP/samp_netencr.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/vendor/raknet/SAMP/SAMPRPC.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/util/util.h \
@@ -53,7 +53,7 @@ C:/Users/napas/Desktop/Apk/Libs/obj/local/armeabi-v7a/objs/samp/gui/CFontRendere
   C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_config_types.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_echo.h \
   C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_preprocess.h \
-  C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring
+  D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring
 
 C:/Users/napas/Desktop/Apk/Libs/jni/gui/CFontRenderer.h:
 
@@ -63,37 +63,37 @@ C:/Users/napas/Desktop/Apk/Libs/jni/gui/..//vendor/imgui/stb_truetype.h:
 
 C:/Users/napas/Desktop/Apk/Libs/jni/gui/../main.h:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\sstream:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\sstream:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdarg:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdarg:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert:
 
 C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/common.h:
 
@@ -131,7 +131,7 @@ C:/Users/napas/Desktop/Apk/Libs/jni/game/RW/rtdict.h:
 
 C:/Users/napas/Desktop/Apk/Libs/jni/vendor/obfuscate/str_obfuscate.hpp:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef:
 
 C:/Users/napas/Desktop/Apk/Libs/jni/vendor/raknet/SAMP/samp_netencr.h:
 
@@ -161,4 +161,4 @@ C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_echo.h:
 
 C:/Users/napas/Desktop/Apk/Libs/jni/vendor\audio/speex/speex_preprocess.h:
 
-C:/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring:
+D:/android-ndk-r16b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring:

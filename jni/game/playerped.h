@@ -88,7 +88,7 @@ public:
 
 	void GiveWeapon(int iWeaponID, int iAmmo);
 	uint8_t GetCurrentWeapon();
-	void SetArmedWeapon(int iWeaponID);
+	void SetArmedWeapon(int iWeaponID, bool unk = 0);
 
 	void SetPlayerAimState();
 	void ClearPlayerAimState();
@@ -190,6 +190,7 @@ public:
 	// Support CallPhone
 	void ToggleCellphone(int iOn);
 	int IsCellphoneEnabled();
+	bool StartPassengerDriveByMode(bool bDriveBy);
 
 public:
 	PED_TYPE*	m_pPed;

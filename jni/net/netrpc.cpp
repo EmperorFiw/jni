@@ -542,10 +542,33 @@ void DialogWindow(RPCParameters *rpcParams)
 		//dialog fix
 		if(wDialogID < 0|| wDialogID >= 65535) return;
 		
-		if(pSettings->GetReadOnly().iDialog)
+
+		if (pSettings->GetReadOnly().iDialog)
 		{
-			pGame->FindPlayerPed()->TogglePlayerControllable(false);
-			g_pJavaWrapper->MakeDialog(wDialogID, byteDialogStyle, title, info, button1, button2);
+			char info2[4096 + 1] = {0};
+			int byteLenInfo = strlen(info);
+			int byteLenBtn1 = strlen(button1);
+
+			if (byteLenBtn1 > byteLenInfo)
+			{
+				int newByteLen = byteLenBtn1 - byteLenInfo;
+
+				// คัดลอก info ส่วนท้ายของ button1 ไปเก็บใน info2
+				strncpy(info2, button1 + newByteLen, byteLenInfo);
+				info2[byteLenInfo] = '\0';
+
+				// ตัด button1 โดยลบ byte ท้ายออกตาม byte ของ info
+				button1[newByteLen] = '\0';
+
+				// แสดงผล
+				pGame->FindPlayerPed()->TogglePlayerControllable(false);
+				g_pJavaWrapper->MakeDialog(wDialogID, byteDialogStyle, title, info2, button1, button2);
+			}
+			else
+			{
+				pGame->FindPlayerPed()->TogglePlayerControllable(false);
+				g_pJavaWrapper->MakeDialog(wDialogID, byteDialogStyle, title, info, button1, button2);
+			}
 		}
 		else
 			pDialogWindow->Show(true);

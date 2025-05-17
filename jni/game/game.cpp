@@ -105,7 +105,7 @@ CObject *CGame::NewObject(int iModel, float fPosX, float fPosY, float fPosZ, VEC
 uint32_t CGame::CreatePickup(int iModel, int iType, float fX, float fY, float fZ, int* unk)
 {
 	Log(OBFUSCATE("CreatePickup(%d, %d, %4.f, %4.f, %4.f)"), iModel, iType, fX, fY, fZ);
-
+	if(!IsObjectInCdImage(iModel)) iModel = 18631;
 	uint32_t hnd;
 
 	if(iModel > 0 && iModel < 20000)

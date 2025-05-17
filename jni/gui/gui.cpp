@@ -49,6 +49,8 @@ void ImGui_ImplRenderWare_ShutDown();
 #define MULT_X	0.00052083333f	// 1/1920
 #define MULT_Y	0.00092592592f 	// 1/1080
 
+
+
 CGUI::CGUI()
 {
 	Log(OBFUSCATE("Initializing GUI.."));
@@ -376,135 +378,135 @@ void CGUI::Render()
 	}
 
 
-	if (pNetGame && !pDialogWindow->m_bIsActive && pGame->IsToggledHUDElement(HUD_ELEMENT_BUTTONS))
-	{
-	ImGuiIO& io = ImGui::GetIO();
-		ImVec2 vecButSize = ImVec2(ImGui::GetFontSize() * 3.2, ImGui::GetFontSize() * 2.4);
-		ImGui::SetNextWindowPos(ImVec2(2.0f, io.DisplaySize.y / 2.4 - vecButSize.x / 1.8));
-		ImGui::Begin(OBFUSCATE("###keys"), nullptr,
-			ImGuiWindowFlags_NoTitleBar |
-			ImGuiWindowFlags_NoResize |
-			ImGuiWindowFlags_NoScrollbar |
-			ImGuiWindowFlags_NoBackground |
-			ImGuiWindowFlags_NoSavedSettings |
-			ImGuiWindowFlags_AlwaysAutoResize);
+	// if (pNetGame && !pDialogWindow->m_bIsActive && pGame->IsToggledHUDElement(HUD_ELEMENT_BUTTONS))
+	// {
+	// ImGuiIO& io = ImGui::GetIO();
+	// 	ImVec2 vecButSize = ImVec2(ImGui::GetFontSize() * 3.2, ImGui::GetFontSize() * 2.4);
+	// 	ImGui::SetNextWindowPos(ImVec2(2.0f, io.DisplaySize.y / 2.4 - vecButSize.x / 1.8));
+	// 	ImGui::Begin(OBFUSCATE("###keys"), nullptr,
+	// 		ImGuiWindowFlags_NoTitleBar |
+	// 		ImGuiWindowFlags_NoResize |
+	// 		ImGuiWindowFlags_NoScrollbar |
+	// 		ImGuiWindowFlags_NoBackground |
+	// 		ImGuiWindowFlags_NoSavedSettings |
+	// 		ImGuiWindowFlags_AlwaysAutoResize);
 
-		if (ImGui::Button(m_bKeysStatus ? OBFUSCATE("<<") : OBFUSCATE(">>"), vecButSize))
-		{
-			if (m_bKeysStatus)
-				m_bKeysStatus = false;
-			else m_bKeysStatus = true;
-		}
+	// 	if (ImGui::Button(m_bKeysStatus ? OBFUSCATE("<<") : OBFUSCATE(">>"), vecButSize))
+	// 	{
+	// 		if (m_bKeysStatus)
+	// 			m_bKeysStatus = false;
+	// 		else m_bKeysStatus = true;
+	// 	}
 
-		ImGui::SameLine(0,12);
-		if (!pScoreBoard->m_bToggle) 
-		{
-			if (ImGui::Button(OBFUSCATE("TAB"), vecButSize))
-			{
-				pScoreBoard->Toggle();
-			}
-		}
-		else 
-		{
-			if (ImGui::Button(OBFUSCATE("X"), vecButSize))
-			{
-				pScoreBoard->Toggle();
-			}
-		}
+	// 	ImGui::SameLine(0,12);
+	// 	if (!pScoreBoard->m_bToggle) 
+	// 	{
+	// 		if (ImGui::Button(OBFUSCATE("TAB"), vecButSize))
+	// 		{
+	// 			pScoreBoard->Toggle();
+	// 		}
+	// 	}
+	// 	else 
+	// 	{
+	// 		if (ImGui::Button(OBFUSCATE("X"), vecButSize))
+	// 		{
+	// 			pScoreBoard->Toggle();
+	// 		}
+	// 	}
 
-		ImGui::SameLine(0,12);
-		CVehiclePool* pVehiclePool = pNetGame->GetVehiclePool();
-		if (pVehiclePool) 
-		{
-			if (pGButton->p_GButtonTexture) pGButton->RenderButton();
-			else
-			{
-				CPlayerPool* pPlayerPool = pNetGame->GetPlayerPool();
-				if (pPlayerPool)
-				{
-					CLocalPlayer* pLocalPlayer;
-					if (!pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsInVehicle() && !pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsAPassenger())
-					{
-						VEHICLEID ClosetVehicleID = pVehiclePool->FindNearestToLocalPlayerPed();
-						if (ClosetVehicleID < MAX_VEHICLES && pVehiclePool->GetSlotState(ClosetVehicleID))
-						{
-							CVehicle* pVehicle = pVehiclePool->GetAt(ClosetVehicleID);
-							if (pVehicle)
-							{
-								if (pVehicle->GetDistanceFromLocalPlayerPed() < 5.0f)
-								{
-									if (ImGui::Button(OBFUSCATE("G"), vecButSize))
-									{
-										if (pNetGame)
-										{
-											pLocalPlayer = pPlayerPool->GetLocalPlayer();
-											if (pLocalPlayer)
-												pLocalPlayer->HandlePassengerEntryEx();
-										}
-									}
-									ImGui::SameLine(0,12);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+	// 	ImGui::SameLine(0,12);
+	// 	CVehiclePool* pVehiclePool = pNetGame->GetVehiclePool();
+	// 	if (pVehiclePool) 
+	// 	{
+	// 		if (pGButton->p_GButtonTexture) pGButton->RenderButton();
+	// 		else
+	// 		{
+	// 			CPlayerPool* pPlayerPool = pNetGame->GetPlayerPool();
+	// 			if (pPlayerPool)
+	// 			{
+	// 				CLocalPlayer* pLocalPlayer;
+	// 				if (!pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsInVehicle() && !pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsAPassenger())
+	// 				{
+	// 					VEHICLEID ClosetVehicleID = pVehiclePool->FindNearestToLocalPlayerPed();
+	// 					if (ClosetVehicleID < MAX_VEHICLES && pVehiclePool->GetSlotState(ClosetVehicleID))
+	// 					{
+	// 						CVehicle* pVehicle = pVehiclePool->GetAt(ClosetVehicleID);
+	// 						if (pVehicle)
+	// 						{
+	// 							if (pVehicle->GetDistanceFromLocalPlayerPed() < 5.0f)
+	// 							{
+	// 								if (ImGui::Button(OBFUSCATE("G"), vecButSize))
+	// 								{
+	// 									if (pNetGame)
+	// 									{
+	// 										pLocalPlayer = pPlayerPool->GetLocalPlayer();
+	// 										if (pLocalPlayer)
+	// 											pLocalPlayer->HandlePassengerEntryEx();
+	// 									}
+	// 								}
+	// 								ImGui::SameLine(0,12);
+	// 							}
+	// 						}
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
 		
-		CPlayerPool* pPlayerPool = pNetGame->GetPlayerPool();
-		// if (pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsInVehicle() && !pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsAPassenger())
-		// {
-		// 	if (ImGui::Button(OBFUSCATE("L. Ctrl"), vecButSize))
-		// 	LocalPlayerKeys.bKeys[ePadKeys::KEY_ACTION] = true;
-		// }
+	// 	CPlayerPool* pPlayerPool = pNetGame->GetPlayerPool();
+	// 	/*if (pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsInVehicle() && !pPlayerPool->GetLocalPlayer()->GetPlayerPed()->IsAPassenger())
+	// 	{
+	// 		if (ImGui::Button(OBFUSCATE("L. Ctrl"), vecButSize))
+	// 		LocalPlayerKeys.bKeys[ePadKeys::KEY_ACTION] = true;
+	// 	}*/
 
-		ImGui::SameLine(0,12);
+	// 	ImGui::SameLine(0,12);
 
-		if (m_bKeysStatus)
-		{
-			ImGui::SameLine(0,12);
-			if (ImGui::Button("ESC", vecButSize))
-	        {
-	         	RakNet::BitStream bsClick;
-	         	bsClick.Write(0xFFFF);
-	         	pNetGame->GetRakClient()->RPC(&RPC_ClickTextDraw, &bsClick, HIGH_PRIORITY, RELIABLE_ORDERED, 0, false, UNASSIGNED_NETWORK_ID, nullptr);
-			}
+	// 	if (m_bKeysStatus)
+	// 	{
+	// 		ImGui::SameLine(0,12);
+	// 		if (ImGui::Button("ESC", vecButSize))
+	//         {
+	//          	RakNet::BitStream bsClick;
+	//          	bsClick.Write(0xFFFF);
+	//          	pNetGame->GetRakClient()->RPC(&RPC_ClickTextDraw, &bsClick, HIGH_PRIORITY, RELIABLE_ORDERED, 0, false, UNASSIGNED_NETWORK_ID, nullptr);
+	// 		}
 
-			ImGui::SameLine(0,12);
-			if (ImGui::Button("SETTING", vecButSize))
-	        {
-				g_pJavaWrapper->ShowClientSettings();
-			}		
+	// 		ImGui::SameLine(0,12);
+	// 		if (ImGui::Button("SETTING", vecButSize))
+	//         {
+	// 			g_pJavaWrapper->ShowClientSettings();
+	// 		}		
 
-			ImGui::SameLine(0,12);
-			if (ImGui::Button(OBFUSCATE("ALT"), vecButSize))
-			{
-				CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
-				{
-					if(pPlayerPed->IsInVehicle()) pthread_create(&threadBut, nullptr, ButtonPressed, (void*)&LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE]);
-					else pthread_create(&threadBut, nullptr, ButtonPressed, (void*)&LocalPlayerKeys.bKeys[ePadKeys::KEY_WALK]);
-				}
-			}
+	// 		ImGui::SameLine(0,12);
+	// 		if (ImGui::Button(OBFUSCATE("ALT"), vecButSize))
+	// 		{
+	// 			CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
+	// 			{
+	// 				if(pPlayerPed->IsInVehicle()) pthread_create(&threadBut, nullptr, ButtonPressed, (void*)&LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE]);
+	// 				else pthread_create(&threadBut, nullptr, ButtonPressed, (void*)&LocalPlayerKeys.bKeys[ePadKeys::KEY_WALK]);
+	// 			}
+	// 		}
 					
-			ImGui::SameLine(0,12);
-			if (ImGui::Button(OBFUSCATE("F"), vecButSize))
-				LocalPlayerKeys.bKeys[ePadKeys::KEY_SECONDARY_ATTACK] = true;
+	// 		ImGui::SameLine(0,12);
+	// 		if (ImGui::Button(OBFUSCATE("F"), vecButSize))
+	// 			LocalPlayerKeys.bKeys[ePadKeys::KEY_SECONDARY_ATTACK] = true;
 
-			ImGui::SameLine(0,12);
-			if (ImGui::Button(OBFUSCATE("H"), vecButSize))
-				LocalPlayerKeys.bKeys[ePadKeys::KEY_CTRL_BACK] = true;
+	// 		ImGui::SameLine(0,12);
+	// 		if (ImGui::Button(OBFUSCATE("H"), vecButSize))
+	// 			LocalPlayerKeys.bKeys[ePadKeys::KEY_CTRL_BACK] = true;
 
-			ImGui::SameLine(0,12);
-			if (ImGui::Button(OBFUSCATE("Y"), vecButSize))
-				LocalPlayerKeys.bKeys[ePadKeys::KEY_YES] = true;
+	// 		ImGui::SameLine(0,12);
+	// 		if (ImGui::Button(OBFUSCATE("Y"), vecButSize))
+	// 			LocalPlayerKeys.bKeys[ePadKeys::KEY_YES] = true;
 
-			ImGui::SameLine(0,12);
-			if (ImGui::Button(OBFUSCATE("N"), vecButSize))
-				LocalPlayerKeys.bKeys[ePadKeys::KEY_NO] = true;
-		}
+	// 		ImGui::SameLine(0,12);
+	// 		if (ImGui::Button(OBFUSCATE("N"), vecButSize))
+	// 			LocalPlayerKeys.bKeys[ePadKeys::KEY_NO] = true;
+	// 	}
 
-		ImGui::End();
-	}
+	// 	ImGui::End();
+	// }
 
 	CDebugInfo::Draw();
 
@@ -816,3 +818,67 @@ void CGUI::RenderMaterialText(ImVec2& posCur, ImU32 col, bool bOutline, const ch
 
 	ImGui::GetBackgroundDrawList()->AddText(font, font_size == 0.0f ? GetFontSize() : font_size, posCur, col, text_begin, text_end);
 }
+
+// extern "C"
+// {
+// 	JNIEXPORT jintArray JNICALL Java_com_nvidia_devtech_NvEventQueueActivity_sendButton(JNIEnv* pEnv, jobject thiz, jint id)
+// 	{
+// 		switch(id)
+// 		{
+// 			case 0:
+// 			{
+
+// 				break;
+// 			}
+// 			case 1:
+// 			{
+// 				pScoreBoard->Toggle();
+// 				break;
+// 			}
+// 			case 2:
+// 			{
+// 				RakNet::BitStream bsClick;
+// 				bsClick.Write(0xFFFF);
+// 				pNetGame->GetRakClient()->RPC(&RPC_ClickTextDraw, &bsClick, HIGH_PRIORITY, RELIABLE_ORDERED, 0, false, UNASSIGNED_NETWORK_ID, nullptr);
+// 				break;
+// 			}
+// 			case 3:
+// 			{
+// 				CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
+// 				{
+// 					if(pPlayerPed->IsInVehicle()) pthread_create(&threadBut, nullptr, ButtonPressed, (void*)&LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE]);
+// 					else pthread_create(&threadBut, nullptr, ButtonPressed, (void*)&LocalPlayerKeys.bKeys[ePadKeys::KEY_WALK]);
+// 				}
+// 				break;
+// 			}
+// 			case 4:
+// 			{
+// 				LocalPlayerKeys.bKeys[ePadKeys::KEY_SECONDARY_ATTACK] = true;
+// 				break;
+// 			}
+// 			case 5:
+// 			{
+// 				LocalPlayerKeys.bKeys[ePadKeys::KEY_CTRL_BACK] = true;
+
+// 				break;
+// 			}
+// 			case 6:
+// 			{
+// 				LocalPlayerKeys.bKeys[ePadKeys::KEY_YES] = true;
+
+// 				break;
+// 			}
+// 			case 7:
+// 			{
+// 				LocalPlayerKeys.bKeys[ePadKeys::KEY_NO] = true;
+// 				break;
+// 			}
+// 			default:
+// 			{
+// 				// โค้ดสำหรับกรณีที่ไม่มี case ตรงกัน
+// 				break;
+// 			}
+// 		}
+		
+// 	}
+// }

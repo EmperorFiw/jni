@@ -211,6 +211,8 @@ public:
 	VEHICLEID			m_CurrentVehicle;
 	VEHICLEID 			m_LastVehicle;
 	bool				m_bIsActive;
+	bool				m_bPassengerDriveByMode;
+
 
 private:
 	uint32_t			GetCurrentAnimationIndexFlag();

@@ -135,14 +135,12 @@ void CActorPed::ForceTargetRotation(float fRotation)
 
 void CActorPed::ApplyAnimation(char* szAnimName, char* szAnimFile, float fDelta, int bLoop, int bLockX, int bLockY, int bFreeze, int uiTime)
 {
-	
-
 	int iWaitAnimLoad = 0;
 
 	if (!m_pPed) return;
 	if (!GamePool_Ped_GetAt(m_dwGTAId)) return;
 
-	//if (!strcasecmp(szAnimFile, OBFUSCATE("SEX"))) return;
+	if (!strcasecmp(szAnimFile, OBFUSCATE("SEX"))) return;
 	if (!pGame->IsAnimationLoaded(szAnimFile))
 	{
 		pGame->RequestAnimation(szAnimFile);

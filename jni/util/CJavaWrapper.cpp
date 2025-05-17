@@ -9,12 +9,16 @@ extern "C" JavaVM* javaVM;
 #include "../net/netgame.h"
 #include "../game/game.h"
 #include "../str_obfuscator_no_template.hpp"
+#include "../dialog.h"
+#include "..//scoreboard.h"
 
+extern CScoreBoard* pScoreBoard;
 extern CKeyBoard* pKeyBoard;
 extern CChatWindow* pChatWindow;
 extern CSettings* pSettings;
 extern CNetGame* pNetGame;
 extern CGame* pGame;
+extern CDialogWindow *pDialogWindow;
 
 JNIEnv* CJavaWrapper::GetEnv()
 {
@@ -200,6 +204,93 @@ extern int g_iStatusDriftChanged;
 #include "..//CDebugInfo.h"
 extern "C"
 {
+	JNIEXPORT void JNICALL Java_com_nvidia_devtech_NvEventQueueActivity_sendButton(JNIEnv* pEnv, jobject thiz, jint action)
+	{
+		CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
+		if (pPlayerPed)
+		{
+			if (pNetGame && !pDialogWindow->m_bIsActive && pGame->IsToggledHUDElement(HUD_ELEMENT_BUTTONS))
+			{
+				switch(action) {
+					case 0:
+					{
+						g_pJavaWrapper->ShowClientSettings();
+						break;
+					}
+					case 1:
+					{
+						CTextDrawPool *pTextDrawPool = pNetGame->GetTextDrawPool();
+						RakNet::BitStream bsClick;
+						bsClick.Write(0xFFFF);
+						pNetGame->GetRakClient()->RPC(&RPC_ClickTextDraw, &bsClick, HIGH_PRIORITY, RELIABLE_ORDERED, 0, false, UNASSIGNED_NETWORK_ID, nullptr);
+						pTextDrawPool->SetSelectState(false, 0);
+						break;
+					}
+					case 2:
+					{
+						if (!pScoreBoard->m_bToggle) 
+						{
+							pScoreBoard->Toggle();
+						}
+						else 
+						{
+							pScoreBoard->Toggle();
+						}
+						break;
+					}
+					case 3:
+					{
+						if(pPlayerPed->IsInVehicle()) LocalPlayerKeys.bKeys[ePadKeys::KEY_FIRE] = true;
+						else LocalPlayerKeys.bKeys[ePadKeys::KEY_WALK] = true;
+						break;
+					}
+					case 4:
+					{
+						LocalPlayerKeys.bKeys[ePadKeys::KEY_SECONDARY_ATTACK] = true;
+						break;
+					}
+					case 5:
+					{
+						LocalPlayerKeys.bKeys[ePadKeys::KEY_CTRL_BACK] = true;
+
+						CPlayerPool *pPlayerPool = pNetGame->GetPlayerPool();
+						CLocalPlayer *pLocalPlayer = pPlayerPool->GetLocalPlayer();
+						int iWeapon = pPlayerPed->GetCurrentWeapon();
+						if(iWeapon != WEAPON_FIST) 
+						{
+							if(!pLocalPlayer->m_bPassengerDriveByMode) 
+							{
+								if(pPlayerPed->StartPassengerDriveByMode(true)) 
+									pLocalPlayer->m_bPassengerDriveByMode = true;
+							}
+							else
+							{
+								pGame->FindPlayerPed()->TogglePlayerControllable(false);
+								pGame->FindPlayerPed()->TogglePlayerControllable(true);
+								pLocalPlayer->m_bPassengerDriveByMode = false;
+							}
+						}
+						break;
+					}
+					case 6:
+					{
+						LocalPlayerKeys.bKeys[ePadKeys::KEY_YES] = true;
+						break;
+					}
+					case 7:
+					{
+						LocalPlayerKeys.bKeys[ePadKeys::KEY_NO] = true;
+						break;
+					}
+					case 8:
+					{
+						LocalPlayerKeys.bKeys[ePadKeys::KEY_CROUCH] = true;
+						break;
+					}
+				}
+			}
+		}
+	}
 	JNIEXPORT void JNICALL Java_com_nvidia_devtech_NvEventQueueActivity_onInputEnd(JNIEnv* pEnv, jobject thiz, jbyteArray str)
 	{
 		if (pKeyBoard)
@@ -1036,6 +1127,7 @@ CJavaWrapper::CJavaWrapper(JNIEnv* env, jobject activity)
 	
 	
 	s_setPauseState = env->GetMethodID(nvEventClass, OBFUSCATE("setPauseState"), OBFUSCATE("(Z)V"));
+
 
 	env->DeleteLocalRef(nvEventClass);
 }

@@ -482,6 +482,7 @@ void CPlayerPed::SetDead()
 {
 	// fix del cam shake
 	unProtect(g_libGTASA + 0x55EFB8);
+
 	if (!m_dwGTAId || !m_pPed)
 	{
 		return;
@@ -666,7 +667,7 @@ void CPlayerPed::GiveWeapon(int iWeaponID, int iAmmo)
 	int iModelID = 0;
 	iModelID = GameGetWeaponModelIDFromWeaponID(iWeaponID);
 	
-	if (iModelID == -1) return;
+	if (iModelID == -1 || iModelID == 46) return;
 	
 	if (!pGame->IsModelLoaded(iModelID)) 
 	{
@@ -679,21 +680,43 @@ void CPlayerPed::GiveWeapon(int iWeaponID, int iAmmo)
 	((int(*)(uintptr_t, unsigned int))(SA_ADDR(0x434528 + 1)))((uintptr_t)m_pPed, iWeaponID);	// CPed::SetCurrentWeapon(thisptr, weapid)
 }
 
-void CPlayerPed::SetArmedWeapon(int iWeaponID)
+// void CPlayerPed::SetArmedWeapon(int iWeaponID)
+// {
+// 	if (!m_pPed || !m_dwGTAId)
+// 	{
+// 		return;
+// 	}
+
+// 	if (!GamePool_Ped_GetAt(m_dwGTAId))
+// 	{
+// 		return;
+// 	}
+// 	Log("Weapon id = %d", iWeaponID);
+// 	((int(*)(uintptr_t, unsigned int))(SA_ADDR(0x434528 + 1)))((uintptr_t)m_pPed, iWeaponID);	// CPed::SetCurrentWeapon(thisptr, weapid)
+// }
+
+void CPlayerPed::SetArmedWeapon(int iWeaponID, bool unk)
 {
-	if (!m_pPed || !m_dwGTAId)
+	if (m_pPed && GamePool_Ped_GetAt(m_dwGTAId))
 	{
-		return;
-	}
+		*(uint8_t*)(g_libGTASA + 0x8E864C) = m_bytePlayerNumber; // CWorld::PlayerInFocus
+		// sub_1009C420()
+		// sub_1009C610()
+		if (unk)
+		{
+			// CPed::SetCurrentWeapon
+			((void (*)(PED_TYPE*, int))(g_libGTASA + 0x434528 + 1))(m_pPed, iWeaponID);
+			// sub_1009C4B0
+		}
+		else
+		{
+			ScriptCommand(&set_actor_armed_weapon, m_dwGTAId, iWeaponID);
+			//sub_1009C4B0();
+		}
 
-	if (!GamePool_Ped_GetAt(m_dwGTAId))
-	{
-		return;
+		*(uint8_t*)(g_libGTASA + 0x8E864C) = 0; // CWorld::PlayerInFocus
 	}
-	Log("Weapon id = %d", iWeaponID);
-	((int(*)(uintptr_t, unsigned int))(SA_ADDR(0x434528 + 1)))((uintptr_t)m_pPed, iWeaponID);	// CPed::SetCurrentWeapon(thisptr, weapid)
 }
-
 void CPlayerPed::SetPlayerAimState()
 {
 	if (!m_pPed || !m_dwGTAId)
@@ -1648,7 +1671,7 @@ void CPlayerPed::ApplyAnimation( char *szAnimName, char *szAnimFile, float fT,
 	if(!m_pPed) return;
 	if(!GamePool_Ped_GetAt(m_dwGTAId)) return;
 
-	//if(!strcasecmp(szAnimFile,OBFUSCATE("SEX"))) return;
+	if(!strcasecmp(szAnimFile,OBFUSCATE("SEX"))) return;
 
 	if(!pGame->IsAnimationLoaded(szAnimFile))
 	{
@@ -1660,6 +1683,7 @@ void CPlayerPed::ApplyAnimation( char *szAnimName, char *szAnimFile, float fT,
 			if(iWaitAnimLoad > 15) return;
 		}
 	}
+	Log("Animation: %s, %s", szAnimName, szAnimFile);
 
 	ScriptCommand(&apply_animation, m_dwGTAId, szAnimName, szAnimFile, fT, opt1, opt2, opt3, opt4, iUnk);
 }
@@ -2423,4 +2447,37 @@ void CPlayerPed::ToggleCellphone(int iOn)
 int CPlayerPed::IsCellphoneEnabled()
 {
 	return m_iCellPhoneEnabled;
+}
+
+
+bool CPlayerPed::StartPassengerDriveByMode(bool bDriveBy)
+{
+	if(m_pPed) {
+
+		if(bDriveBy)
+		{
+			if(!IN_VEHICLE(m_pPed) || !m_pPed->pVehicle) return false;
+
+			int iWeapon = GetCurrentWeapon();
+			
+			if(iWeapon == WEAPON_PARACHUTE) 
+			{
+				SetArmedWeapon(0, 0);
+				return false;
+			}
+
+			SetArmedWeapon(iWeapon, 0);
+
+			ScriptCommand(&enter_passenger_driveby,
+				m_dwGTAId,-1,-1,0.0f,0.0f,0.0f,300.0f,8,1,100);
+			} 
+			else {
+
+			int iVehicleID = GamePool_Vehicle_GetIndex((VEHICLE_TYPE *)m_pPed->pVehicle);
+			EnterVehicle(iVehicleID, false);
+		}
+
+		return true;
+	}
+	return false;
 }

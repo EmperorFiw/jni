@@ -1789,7 +1789,7 @@ void ScrSetPlayerArmed(RPCParameters* rpcParams)
 	RakNet::BitStream bsData(Data, (iBitLength / 8) + 1, false);
 	bsData.Read(weaponID);
 
-	pNetGame->GetPlayerPool()->GetLocalPlayer()->GetPlayerPed()->SetArmedWeapon(weaponID);
+	pNetGame->GetPlayerPool()->GetLocalPlayer()->GetPlayerPed()->SetArmedWeapon(weaponID, 0);
 }
 void ScrDeathMessage(RPCParameters* rpcParams)
 {

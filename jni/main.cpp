@@ -141,7 +141,7 @@ void InitSAMP(JNIEnv* pEnv, jobject thiz)
 	
 	//BASS_Init(-1, 44100, BASS_DEVICE_3D, 0, nullptr); // ������������� ��������� ������
 
-	g_pszStorage = "/storage/emulated/0/Android/LOSTMAN/";
+	g_pszStorage = "/storage/emulated/0/Android/MUMMYTOWNDATAKINGSUPER1.8/";
 
 	if(!g_pszStorage)
 	{

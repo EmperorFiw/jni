@@ -989,8 +989,8 @@ void CLocalPlayer::SendInCarFullSyncData()
 		icSync.vecMoveSpeed.Y = vecMoveSpeed.Y;
 		icSync.vecMoveSpeed.Z = vecMoveSpeed.Z;
 
-		if (pVehicle->GetHealth() <= 300.0f)
-			pVehicle->SetHealth(300.0f);
+		/*if (pVehicle->GetHealth() <= 300.0f)
+			pVehicle->SetHealth(300.0f);*/
 
 		icSync.fCarHealth = pVehicle->GetHealth();
 		icSync.bytePlayerHealth = (uint8_t)m_pPlayerPed->GetHealth();

@@ -791,7 +791,7 @@ void NvUtilInit_hook(void)
 {	
 	NvUtilInit();
 	unProtect(SA_ADDR(0x5D1608));
-	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/LOSTMAN/";
+	*(char**)(SA_ADDR(0x5D1608)) = "/storage/emulated/0/Android/MUMMYTOWNDATAKINGSUPER1.8/";
 }
 
 
@@ -867,9 +867,6 @@ void InstallSpecialHooks()
 
 	installHook(SA_ADDR(0x25E660), (uintptr_t) MainMenuScreen__Update_hook, (uintptr_t *) &MainMenuScreen__Update);
 	installHook(SA_ADDR(0x23BB84), (uintptr_t) OS_FileOpen_hook, (uintptr_t *) &OS_FileOpen);
-
-	//new hooks
-	installHook(SA_ADDR(0x3365D4), (uintptr_t) CClumpModelInfo_AddClumpModel_hook, (uintptr_t *) &CClumpModelInfo_AddClumpModel);
 
 	// -- Huawei (Y7) crash fix
 	if (!*(uintptr_t*)(SA_ADDR(0x61B298)))
@@ -3143,6 +3140,9 @@ void InstallHooks()
 	// Add custom siren to our vehicle
 	installHook(SA_ADDR(0x510B08), (uintptr_t) CVehicle__UsesSiren_hook, (uintptr_t *) &CVehicle__UsesSiren);
 
+	// Add Clump Anim Object
+	installHook(SA_ADDR(0x3365D4), (uintptr_t) CClumpModelInfo_AddClumpModel_hook, (uintptr_t *) &CClumpModelInfo_AddClumpModel);
+
 	// TextDraw render
 	installHook(SA_ADDR(0x3D5894), (uintptr_t) CHud__DrawScriptText_hook, (uintptr_t *) &CHud__DrawScriptText);
 
@@ -3238,6 +3238,8 @@ void InstallHooks()
 	//installHook(SA_ADDR(0x29C924), (uintptr_t) CCollision__CameraCollisionVehicles_hook, (uintptr_t *) &CCollision__CameraCollisionVehicles);
 	installHook(SA_ADDR(0x33DC1C), (uintptr_t) CAnimManager_GetAnimation_hook, (uintptr_t *) &CAnimManager_GetAnimation);
 	installHook(SA_ADDR(0x4C87B0), (uintptr_t) CTaskSimpleHoldEntity_hook, (uintptr_t *) &CTaskSimpleHoldEntity); //FixCrash 
+
+	installHook(SA_ADDR(0x23768C), (uintptr_t)ANDRunThread_hook, (uintptr_t*)&ANDRunThread);
 
 	HookCPad();
 }
